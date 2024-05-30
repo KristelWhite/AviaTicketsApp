@@ -1,0 +1,14 @@
+/* 
+  Common.strings
+  AviaTicketsApp
+
+  Created by Кристина Пастухова on 30.05.2024.
+  
+*/
+"avia" = "Авиабилеты";
+"profile" = "Профиль";
+"subscriptions" = "Подписки";
+"about" = "Короче" ;
+"hotels" = "Отели" ;
+
+
