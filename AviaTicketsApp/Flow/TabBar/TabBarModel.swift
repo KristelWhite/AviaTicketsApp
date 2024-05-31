@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum TabBarModel {
+enum TabBarModel: CaseIterable {
     case avia
     case hotels
     case about

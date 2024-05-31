@@ -8,13 +8,42 @@
 import UIKit
 
 class TabBarConfigurator {
+
+    init(tabs: [TabBarModel]) {
+        self.allTab = tabs
+    }
+
     //MARK: - private property
-    private let allTab: [TabBarModel] = [.avia, .hotels, .about, .subscriptions, .profile]
+    private let allTab: [TabBarModel]
 
     //MARK: - Internal func
     func configure() -> UITabBarController {
         return getTabBarController()
     }
+
+//    // Method to present a view controller
+//    func present(_ viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
+//        tabBarController.present(viewController, animated: animated, completion: completion)
+//    }
+//
+//    // Method to push a view controller on the current navigation stack
+//    func push(_ viewController: UIViewController, animated: Bool = true) {
+//        if let navController = tabBarController.selectedViewController as? UINavigationController {
+//            navController.pushViewController(viewController, animated: animated)
+//        }
+//    }
+//
+//    // Method to pop a view controller from the current navigation stack
+//    func pop(animated: Bool = true) {
+//        if let navController = tabBarController.selectedViewController as? UINavigationController {
+//            navController.popViewController(animated: animated)
+//        }
+//    }
+//
+//    // Method to dismiss a presented view controller
+//    func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
+//        tabBarController.dismiss(animated: animated, completion: completion)
+//    }
 }
 
 private extension TabBarConfigurator {
@@ -42,7 +71,10 @@ private extension TabBarConfigurator {
     func getCurrentViewController(tab: TabBarModel) -> UIViewController {
         switch tab {
         case .avia:
-            return MainViewController()
+            let vc = MainViewController()
+            let viewModel = MainViewModel()
+            vc.viewModel = viewModel
+            return vc
         case .profile:
             return CommingSoonViewController()
         case .hotels:

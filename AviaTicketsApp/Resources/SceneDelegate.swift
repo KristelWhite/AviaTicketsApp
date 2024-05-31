@@ -28,7 +28,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func runMainFlow() {
-        window?.rootViewController = TabBarConfigurator().configure()
+        window?.rootViewController = AppCoordinator.shared.tabBarController
+        AppCoordinator.shared.start()
     }
 
     private func runLaunchScreen () {

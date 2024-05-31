@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct MainModel {
+    let cityFrom: String
+    let cityTo: String
+}
+
+struct Concert: Hashable { 
+    let id: UUID
+    let artist: String
+    let city: String
+    let price: String
+    let imageName: String
+}
