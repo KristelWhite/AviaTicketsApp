@@ -13,9 +13,9 @@ class ConcertCell: UICollectionViewCell {
 
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "magnifyingglass")
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 16
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     private let artistLabel: UILabel = {
@@ -98,7 +98,7 @@ class ConcertCell: UICollectionViewCell {
     }
 
     func configure(with concert: Concert) {
-        imageView.image = UIImage(named: concert.imageName)
+        imageView.image = Asset.dieAntwoord.image
         artistLabel.text = concert.artist
         cityLabel.text = concert.city
         priceLabel.text = concert.price

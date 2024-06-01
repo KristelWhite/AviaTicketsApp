@@ -7,15 +7,19 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 class MainViewController: UIViewController {
+
+    let service = RequestManager()
+    private var cancellables = Set<AnyCancellable>()
 
     var viewModel: MainViewModel?
     private lazy var concertDataSource = ConcertDataSource(collectionView: collectionView)
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Поиск дешовых\nавиабилетов"
+        label.text = "Поиск дешевых\nавиабилетов"
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = Typography.title1.font
@@ -191,9 +195,22 @@ class MainViewController: UIViewController {
     }
 
     private func loadData() {
-        let concerts = [Concert( artist: "artist", city: "city", price: "price", imageName: "nrjhn")]
-        print("Concerts loaded: \(concerts)")
-        concertDataSource.applySnapshot(concerts: concerts)
+        service.fetchConcerts()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("Ошибка: \(error)")
+                }
+            }, receiveValue: { data in
+                print("Получены данные первого API: \(data)")
+            })
+            .store(in: &cancellables)
+
+//        let concerts = [Concert( artist: "artist", city: "city", price: "price", imageName: "nrjhn")]
+
+//        concertDataSource.applySnapshot(concerts: concerts)
     }
 }
 
