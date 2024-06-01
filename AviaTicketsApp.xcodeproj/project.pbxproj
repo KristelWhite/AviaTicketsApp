@@ -29,6 +29,10 @@
 		6375FFCA2C08BBED00EC1E36 /* ConcertDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFC92C08BBED00EC1E36 /* ConcertDataSource.swift */; };
 		6375FFCC2C08BC2E00EC1E36 /* ConsertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFCB2C08BC2E00EC1E36 /* ConsertCell.swift */; };
 		6375FFD32C0A04A300EC1E36 /* AviaCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFD22C0A04A300EC1E36 /* AviaCoordinator.swift */; };
+		6375FFD82C0A384C00EC1E36 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFD72C0A384C00EC1E36 /* ColorPalette.swift */; };
+		6375FFDA2C0A3C2900EC1E36 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFD92C0A3C2900EC1E36 /* Typography.swift */; };
+		6375FFDC2C0B219C00EC1E36 /* Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFDB2C0B219C00EC1E36 /* Shadows.swift */; };
+		6375FFDE2C0B265C00EC1E36 /* Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFDD2C0B265C00EC1E36 /* Borders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,10 @@
 		6375FFC92C08BBED00EC1E36 /* ConcertDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertDataSource.swift; sourceTree = "<group>"; };
 		6375FFCB2C08BC2E00EC1E36 /* ConsertCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsertCell.swift; sourceTree = "<group>"; };
 		6375FFD22C0A04A300EC1E36 /* AviaCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviaCoordinator.swift; sourceTree = "<group>"; };
+		6375FFD72C0A384C00EC1E36 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		6375FFD92C0A3C2900EC1E36 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		6375FFDB2C0B219C00EC1E36 /* Shadows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadows.swift; sourceTree = "<group>"; };
+		6375FFDD2C0B265C00EC1E36 /* Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borders.swift; sourceTree = "<group>"; };
 		9450322BD7A53063FFB9D3B9 /* Pods-AviaTicketsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviaTicketsApp.debug.xcconfig"; path = "Target Support Files/Pods-AviaTicketsApp/Pods-AviaTicketsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C483D0D017FB00C759DC5473 /* Pods_AviaTicketsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AviaTicketsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E857FA6C4ACA5DAD79DC13A2 /* Pods-AviaTicketsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviaTicketsApp.release.xcconfig"; path = "Target Support Files/Pods-AviaTicketsApp/Pods-AviaTicketsApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +101,7 @@
 		6375FF912C088D0C00EC1E36 /* AviaTicketsApp */ = {
 			isa = PBXGroup;
 			children = (
+				6375FFD62C0A381100EC1E36 /* Extensions */,
 				6375FFA92C0891D900EC1E36 /* Service */,
 				6375FFA72C088E9400EC1E36 /* Resources */,
 				6375FFA82C088F8A00EC1E36 /* Flow */,
@@ -126,11 +135,10 @@
 		6375FFA82C088F8A00EC1E36 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				6375FFD52C0A193300EC1E36 /* CoomingSoon */,
+				6375FFD42C0A190600EC1E36 /* Coordinators */,
 				6375FFAB2C0891FA00EC1E36 /* TabBar */,
-				6375FFB72C0895CB00EC1E36 /* AppCoordinator.swift */,
-				6375FFD22C0A04A300EC1E36 /* AviaCoordinator.swift */,
 				6375FFB22C08956D00EC1E36 /* Main */,
-				6375FFB92C0896F300EC1E36 /* CommingSoonViewController.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -205,6 +213,34 @@
 				6375FFCB2C08BC2E00EC1E36 /* ConsertCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6375FFD42C0A190600EC1E36 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				6375FFB72C0895CB00EC1E36 /* AppCoordinator.swift */,
+				6375FFD22C0A04A300EC1E36 /* AviaCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		6375FFD52C0A193300EC1E36 /* CoomingSoon */ = {
+			isa = PBXGroup;
+			children = (
+				6375FFB92C0896F300EC1E36 /* CommingSoonViewController.swift */,
+			);
+			path = CoomingSoon;
+			sourceTree = "<group>";
+		};
+		6375FFD62C0A381100EC1E36 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6375FFD72C0A384C00EC1E36 /* ColorPalette.swift */,
+				6375FFD92C0A3C2900EC1E36 /* Typography.swift */,
+				6375FFDB2C0B219C00EC1E36 /* Shadows.swift */,
+				6375FFDD2C0B265C00EC1E36 /* Borders.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		82178FC24FAE0B4558DCD373 /* Pods */ = {
@@ -361,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6375FFD82C0A384C00EC1E36 /* ColorPalette.swift in Sources */,
 				6375FFB62C0895B400EC1E36 /* MainModel.swift in Sources */,
 				6375FFB42C08959000EC1E36 /* MainViewModel.swift in Sources */,
 				6375FFC72C08A19A00EC1E36 /* Common.swift in Sources */,
@@ -371,11 +408,14 @@
 				6375FFAF2C08922E00EC1E36 /* TabBarConfigurator.swift in Sources */,
 				6375FFCC2C08BC2E00EC1E36 /* ConsertCell.swift in Sources */,
 				6375FFAD2C08921100EC1E36 /* TabBarModel.swift in Sources */,
+				6375FFDC2C0B219C00EC1E36 /* Shadows.swift in Sources */,
 				6375FFB12C08955A00EC1E36 /* MainViewController.swift in Sources */,
+				6375FFDE2C0B265C00EC1E36 /* Borders.swift in Sources */,
 				6375FFBA2C0896F300EC1E36 /* CommingSoonViewController.swift in Sources */,
 				6375FF932C088D0C00EC1E36 /* AppDelegate.swift in Sources */,
 				6375FF952C088D0C00EC1E36 /* SceneDelegate.swift in Sources */,
 				6375FFB82C0895CB00EC1E36 /* AppCoordinator.swift in Sources */,
+				6375FFDA2C0A3C2900EC1E36 /* Typography.swift in Sources */,
 				6375FFCA2C08BBED00EC1E36 /* ConcertDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

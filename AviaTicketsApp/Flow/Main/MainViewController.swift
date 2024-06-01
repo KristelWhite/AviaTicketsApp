@@ -13,118 +13,192 @@ class MainViewController: UIViewController {
     var viewModel: MainViewModel?
     private lazy var concertDataSource = ConcertDataSource(collectionView: collectionView)
 
-    private let searchContainerView: UIView = {
-            let view = UIView()
-            view.backgroundColor = .darkGray
-            view.layer.cornerRadius = 10
-            return view
-        }()
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Поиск дешовых\nавиабилетов"
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = Typography.title1.font
+        label.textColor = Palette.grey7.color
+        Shadow.base.apply(to: label)
+//        Border.base.apply(to: label, with: text)
+        return label
+    }()
 
-        private let cityFromTextField: UITextField = {
-            let textField = UITextField()
-            textField.placeholder = "Минск"
-            textField.borderStyle = .none
-            textField.backgroundColor = .white
-            textField.layer.cornerRadius = 5
-            textField.setLeftPaddingPoints(10)
-            return textField
-        }()
+    private let innerSearchContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Palette.grey4.color
+        Shadow.base.apply(to: view)
+        view.layer.cornerRadius = 16
+        return view
+    }()
 
-        private let cityToTextField: UITextField = {
-            let textField = UITextField()
-            textField.placeholder = "Куда - Турция"
-            textField.borderStyle = .none
-            textField.backgroundColor = .white
-            textField.layer.cornerRadius = 5
-            textField.setLeftPaddingPoints(10)
-            return textField
-        }()
+    private let outerSearchContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Palette.grey3.color
+        view.layer.cornerRadius = 16
+        return view
+    }()
 
-        private let searchImageView: UIImageView = {
-            let imageView = UIImageView()
-            imageView.image = UIImage(systemName: "magnifyingglass")
-            imageView.tintColor = .white
-            return imageView
-        }()
+    private let separaterView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Palette.grey6.color
+        return view
+    }()
 
-        private let titleLabel: UILabel = {
-            let label = UILabel()
-            label.text = "Музыкально отлететь"
-            label.font = UIFont.boldSystemFont(ofSize: 24)
-            label.textColor = .white
-            return label
-        }()
+    private let cityFromTextField: UITextField = {
+        let textField = UITextField()
+        let placeholderText = "Откуда - Москва"
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: Palette.grey6.color, .font: Typography.buttonText.font
+        ]
+        textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: attributes)
+        textField.borderStyle = .none
+        textField.backgroundColor = .clear
+        textField.textColor = Palette.white.color
+        textField.font = Typography.buttonText.font
+        return textField
+    }()
 
-        private let collectionView: UICollectionView = {
-            let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .horizontal
-            let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-            collectionView.backgroundColor = .clear
-//            collectionView.register(ConcertCell.self, forCellWithReuseIdentifier: ConcertCell.reuseIdentifier)
-            return collectionView
-        }()
+    private let cityToTextField: UITextField = {
+        let textField = UITextField()
+        let placeholderText = "Куда - Турция"
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: Palette.grey6.color, .font: Typography.buttonText.font
+        ]
+        textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: attributes)
+        textField.borderStyle = .none
+        textField.backgroundColor = .clear
+        textField.textColor = Palette.white.color
+        textField.font = Typography.buttonText.font
+        return textField
+    }()
 
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            view.backgroundColor = .black
+    private let searchImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = Asset.search.image
+        imageView.tintColor = Palette.grey7.color
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
 
-            setupUI()
-        }
+    private let secondTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Музыкально отлететь"
+        label.font = Typography.title1.font
+        label.textColor = Palette.white.color
+        return label
+    }()
 
-        private func setupUI() {
-            view.addSubview(searchContainerView)
-            searchContainerView.addSubview(cityFromTextField)
-            searchContainerView.addSubview(cityToTextField)
-            searchContainerView.addSubview(searchImageView)
-            view.addSubview(titleLabel)
-            view.addSubview(collectionView)
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 132, height: 213)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.register(ConcertCell.self, forCellWithReuseIdentifier: ConcertCell.reuseIdentifier)
+        return collectionView
+    }()
 
-            searchContainerView.snp.makeConstraints { make in
-                make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
-                make.leading.trailing.equalToSuperview().inset(20)
-                make.height.equalTo(100)
-            }
+    private let hStack: UIStackView = {
+        let horizontalStackView = UIStackView()
+        horizontalStackView.axis = .horizontal
+        horizontalStackView.distribution = .fill
+        horizontalStackView.alignment = .fill
+        horizontalStackView.spacing = 16
+        return horizontalStackView
+    }()
 
-            cityFromTextField.snp.makeConstraints { make in
-                make.top.equalToSuperview().offset(10)
-                make.leading.trailing.equalToSuperview().inset(10)
-                make.height.equalTo(40)
-            }
+    private let vStack: UIStackView = {
+        let verticalStackView = UIStackView()
+        verticalStackView.axis = .vertical
+        verticalStackView.distribution = .equalSpacing
+        verticalStackView.alignment = .fill
+        verticalStackView.spacing = 8
+        return verticalStackView
 
-            cityToTextField.snp.makeConstraints { make in
-                make.top.equalTo(cityFromTextField.snp.bottom).offset(10)
-                make.leading.trailing.equalToSuperview().inset(10)
-                make.height.equalTo(40)
-            }
+    }()
 
-            searchImageView.snp.makeConstraints { make in
-                make.trailing.equalToSuperview().inset(15)
-                make.centerY.equalTo(cityToTextField)
-                make.width.height.equalTo(25)
-            }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = Palette.black.color
 
-            titleLabel.snp.makeConstraints { make in
-                make.top.equalTo(searchContainerView.snp.bottom).offset(20)
-                make.leading.equalToSuperview().inset(20)
-            }
-
-            collectionView.snp.makeConstraints { make in
-                make.top.equalTo(titleLabel.snp.bottom).offset(20)
-                make.leading.trailing.equalToSuperview()
-                make.height.equalTo(200)
-            }
-        }
-
-
-
-//        private func loadData() {
-//            let concerts = viewModel.getConcerts()
-//            concertDataSource.applySnapshot(concerts: concerts)
-//        }
+        setupUI()
+        loadData()
     }
 
+    private func setupUI() {
+        vStack.addArrangedSubview(cityFromTextField)
+        vStack.addArrangedSubview(separaterView)
+        vStack.addArrangedSubview(cityToTextField)
+        hStack.addArrangedSubview(searchImageView)
+        hStack.addArrangedSubview(vStack)
+        innerSearchContainerView.addSubview(hStack)
+        outerSearchContainerView.addSubview(innerSearchContainerView)
+        view.addSubview(outerSearchContainerView)
+
+        view.addSubview(titleLabel)
+        view.addSubview(secondTitleLabel)
+        view.addSubview(collectionView)
+
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(28)
+            make.centerX.equalToSuperview()
+        }
+
+        outerSearchContainerView.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(38)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(122)
+        }
+
+        innerSearchContainerView.snp.makeConstraints { make in
+            make.top.leading.trailing.bottom.equalToSuperview().inset(16)
+        }
+
+        hStack.snp.makeConstraints { make in
+            make.top.bottom.trailing.equalToSuperview().inset(16)
+            make.leading.equalToSuperview().inset(8)
+        }
+
+//        cityFromTextField.snp.makeConstraints { make in
+//            make.height.equalTo(21)
+//        }
+//
+//        cityToTextField.snp.makeConstraints { make in
+//            make.height.equalTo(21)
+//        }
+
+        separaterView.snp.makeConstraints { make in
+            make.height.equalTo(1)
+        }
+
+        searchImageView.snp.makeConstraints { make in
+            make.width.equalTo(24)
+        }
+
+        secondTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(outerSearchContainerView.snp.bottom).offset(32)
+            make.leading.equalToSuperview().inset(16)
+        }
+
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(secondTitleLabel.snp.bottom).offset(26)
+            make.leading.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(213)
+        }
+    }
+
+    private func loadData() {
+        let concerts = [Concert( artist: "artist", city: "city", price: "price", imageName: "nrjhn")]
+        print("Concerts loaded: \(concerts)")
+        concertDataSource.applySnapshot(concerts: concerts)
+    }
+}
+
 extension UITextField {
-    func setLeftPaddingPoints(_ amount:CGFloat){
+    func setLeftPaddingPoints(_ amount: CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.leftView = paddingView
         self.leftViewMode = .always

@@ -13,7 +13,6 @@ struct MainModel {
 }
 
 struct Concert: Hashable { 
-    let id: UUID
     let artist: String
     let city: String
     let price: String

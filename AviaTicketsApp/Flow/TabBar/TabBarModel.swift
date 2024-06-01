@@ -31,15 +31,15 @@ enum TabBarModel: CaseIterable {
     var image: UIImage? {
         switch self {
         case .profile:
-            return UIImage(named: "profileTab")
+            return Asset.profile.image
         case .avia:
-            return UIImage(named: "profileTab")
+            return Asset.avia.image
         case .hotels:
-            return UIImage(named: "profileTab")
+            return Asset.bed.image
         case .about:
-            return UIImage(named: "profileTab")
+            return Asset.location.image
         case .subscriptions:
-            return UIImage(named: "profileTab")
+            return Asset.followingsOn.image
         }
     }
     var selectedImage: UIImage? {
