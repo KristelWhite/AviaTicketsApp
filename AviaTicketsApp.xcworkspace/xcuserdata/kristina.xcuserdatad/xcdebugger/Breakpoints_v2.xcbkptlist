@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "327D2B68-9244-4F34-B8FB-A6375B16F1CC"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3FA00493-E659-493C-8B63-6DC51E1BF479"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AviaTicketsApp/Flow/Main/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3FA00493-E659-493C-8B63-6DC51E1BF479 - cde50dae0d257199"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AviaTicketsApp.MainViewController.setupUI() -&gt; ()"
+                  moduleName = "AviaTicketsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristina/Documents/AviaTicketsApp/AviaTicketsApp/Flow/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "1932">
+               </Location>
+               <Location
+                  uuid = "3FA00493-E659-493C-8B63-6DC51E1BF479 - 33f21b039d007e98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SnapKit.ConstraintMaker) -&gt; () in AviaTicketsApp.MainViewController.setupUI() -&gt; ()"
+                  moduleName = "AviaTicketsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristina/Documents/AviaTicketsApp/AviaTicketsApp/Flow/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0780F306-E453-4D3C-ACE8-6D4C32CAFD9D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AviaTicketsApp/Flow/Main/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0780F306-E453-4D3C-ACE8-6D4C32CAFD9D - cde50dae0d2572fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AviaTicketsApp.MainViewController.setupUI() -&gt; ()"
+                  moduleName = "AviaTicketsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristina/Documents/AviaTicketsApp/AviaTicketsApp/Flow/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "2043">
+               </Location>
+               <Location
+                  uuid = "0780F306-E453-4D3C-ACE8-6D4C32CAFD9D - 17a6f144fd32d23e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (SnapKit.ConstraintMaker) -&gt; () in AviaTicketsApp.MainViewController.setupUI() -&gt; ()"
+                  moduleName = "AviaTicketsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristina/Documents/AviaTicketsApp/AviaTicketsApp/Flow/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "54">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5EC97403-B0D4-4C5D-AA55-A6C3F27BFE23"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AviaTicketsApp/Flow/Main/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5EC97403-B0D4-4C5D-AA55-A6C3F27BFE23 - cde50dae0d257202"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AviaTicketsApp.MainViewController.setupUI() -&gt; ()"
+                  moduleName = "AviaTicketsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristina/Documents/AviaTicketsApp/AviaTicketsApp/Flow/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "2210">
+               </Location>
+               <Location
+                  uuid = "5EC97403-B0D4-4C5D-AA55-A6C3F27BFE23 - 7b9ba6845d2f060b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (SnapKit.ConstraintMaker) -&gt; () in AviaTicketsApp.MainViewController.setupUI() -&gt; ()"
+                  moduleName = "AviaTicketsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristina/Documents/AviaTicketsApp/AviaTicketsApp/Flow/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0AB830A4-F50B-41F3-B356-85376155F4AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AviaTicketsApp/Flow/Main/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0AB830A4-F50B-41F3-B356-85376155F4AC - cde50dae0d257386"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AviaTicketsApp.MainViewController.setupUI() -&gt; ()"
+                  moduleName = "AviaTicketsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristina/Documents/AviaTicketsApp/AviaTicketsApp/Flow/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "2317">
+               </Location>
+               <Location
+                  uuid = "0AB830A4-F50B-41F3-B356-85376155F4AC - 5e4c1cc5bd597d86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (SnapKit.ConstraintMaker) -&gt; () in AviaTicketsApp.MainViewController.setupUI() -&gt; ()"
+                  moduleName = "AviaTicketsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristina/Documents/AviaTicketsApp/AviaTicketsApp/Flow/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA80B1EC-EF83-4F0C-8E4E-AC0B8C77E2A6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AviaTicketsApp/Flow/Main/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AA80B1EC-EF83-4F0C-8E4E-AC0B8C77E2A6 - cde50dae0d2576bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AviaTicketsApp.MainViewController.setupUI() -&gt; ()"
+                  moduleName = "AviaTicketsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristina/Documents/AviaTicketsApp/AviaTicketsApp/Flow/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "2424">
+               </Location>
+               <Location
+                  uuid = "AA80B1EC-EF83-4F0C-8E4E-AC0B8C77E2A6 - 8200f2051d4bd572"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (SnapKit.ConstraintMaker) -&gt; () in AviaTicketsApp.MainViewController.setupUI() -&gt; ()"
+                  moduleName = "AviaTicketsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristina/Documents/AviaTicketsApp/AviaTicketsApp/Flow/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "54">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3B159A1-3641-462B-8C64-CD9D104CBB84"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AviaTicketsApp/Flow/Main/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F3B159A1-3641-462B-8C64-CD9D104CBB84 - cde50dae0d2577e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AviaTicketsApp.MainViewController.setupUI() -&gt; ()"
+                  moduleName = "AviaTicketsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristina/Documents/AviaTicketsApp/AviaTicketsApp/Flow/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "2591">
+               </Location>
+               <Location
+                  uuid = "F3B159A1-3641-462B-8C64-CD9D104CBB84 - e6f5a8467d440328"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #6 (SnapKit.ConstraintMaker) -&gt; () in AviaTicketsApp.MainViewController.setupUI() -&gt; ()"
+                  moduleName = "AviaTicketsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristina/Documents/AviaTicketsApp/AviaTicketsApp/Flow/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "54">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
