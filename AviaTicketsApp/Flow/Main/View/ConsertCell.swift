@@ -98,7 +98,7 @@ class ConcertCell: UICollectionViewCell {
     }
 
     func configure(with concert: Concert) {
-        imageView.image = Asset.dieAntwoord.image
+        imageView.image = concert.image
         artistLabel.text = concert.artist
         cityLabel.text = concert.city
         priceLabel.text = concert.price

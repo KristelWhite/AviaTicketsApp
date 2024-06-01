@@ -29,7 +29,7 @@ extension Price {
         formatter.groupingSeparator = " "
         let number = Double(self.value)
         if let formattedString = formatter.string(from: NSNumber(value: number)) {
-            return formattedString
+            return "от " + formattedString + " ₽" 
         }
         return String(self.value)
     }

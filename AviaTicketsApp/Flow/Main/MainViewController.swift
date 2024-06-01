@@ -11,8 +11,11 @@ import Combine
 
 class MainViewController: UIViewController {
 
-    let service = RequestManager()
-    private var cancellables = Set<AnyCancellable>()
+//    enum Event {
+//        case loadData
+//    }
+//
+//    var onEvent: ((Event) -> Void)?
 
     var viewModel: MainViewModel?
     private lazy var concertDataSource = ConcertDataSource(collectionView: collectionView)
@@ -128,7 +131,13 @@ class MainViewController: UIViewController {
         view.backgroundColor = Palette.black.color
 
         setupUI()
-        loadData()
+        viewModel?.onOutput = { [weak self] output in
+            switch output {
+            case .content(let concerts):
+                self?.concertDataSource.applySnapshot(concerts: concerts)
+            }
+        }
+        viewModel?.handle(.loadData)
     }
 
     private func setupUI() {
@@ -193,31 +202,12 @@ class MainViewController: UIViewController {
             make.height.equalTo(213)
         }
     }
-
-    private func loadData() {
-        service.fetchConcerts()
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print("Ошибка: \(error)")
-                }
-            }, receiveValue: { data in
-                print("Получены данные первого API: \(data)")
-            })
-            .store(in: &cancellables)
-
-//        let concerts = [Concert( artist: "artist", city: "city", price: "price", imageName: "nrjhn")]
-
-//        concertDataSource.applySnapshot(concerts: concerts)
-    }
 }
 
-extension UITextField {
-    func setLeftPaddingPoints(_ amount: CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.leftView = paddingView
-        self.leftViewMode = .always
-    }
-}
+//extension UITextField {
+//    func setLeftPaddingPoints(_ amount: CGFloat) {
+//        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+//        self.leftView = paddingView
+//        self.leftViewMode = .always
+//    }
+//}
