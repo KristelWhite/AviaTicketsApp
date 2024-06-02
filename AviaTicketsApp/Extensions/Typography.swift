@@ -30,7 +30,7 @@ enum Typography {
         case .text1:
             return UIFont.systemFont(ofSize: 16.0, weight: .regular)
         case .text2:
-            return UIFont.systemFont(ofSize: 14.0, weight: .semibold)
+            return UIFont.systemFont(ofSize: 14.0, weight: .regular)
         case .buttonText:
             return UIFont.systemFont(ofSize: 16.0, weight: .regular)
         case .tabText:

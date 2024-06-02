@@ -38,15 +38,15 @@ class AppCoordinator {
     }
 
     private func createNavController(for tab: TabBarModel) -> UINavigationController {
-            let vc = getCurrentViewController(tab: tab)
-            let navController = UINavigationController(rootViewController: vc)
+//            let vc = getCurrentViewController(tab: tab)
+            let navController = UINavigationController()
             let coordinator: Coordinator
 
             switch tab {
             case .avia:
-                coordinator = AviaCoordinator(navigationController: navController, rootController: vc)
+                coordinator = AviaCoordinator(navigationController: navController)
             case .profile, .hotels, .about, .subscriptions:
-                coordinator = CommingSoonCoordinator(navigationController: navController, rootController: vc)
+                coordinator = CommingSoonCoordinator(navigationController: navController)
             }
 
             coordinator.start()

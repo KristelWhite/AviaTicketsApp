@@ -138,6 +138,7 @@ class MainViewController: UIViewController {
             }
         }
         viewModel?.handle(.loadData)
+        viewModel?.handle(.enterCityFrom(""))
     }
 
     private func setupUI() {

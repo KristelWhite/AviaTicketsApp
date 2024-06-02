@@ -1,14 +1,14 @@
 //
-//  MainViewModel.swift
+//  SearchViewModel.swift
 //  AviaTicketsApp
 //
-//  Created by Кристина Пастухова on 30.05.2024.
+//  Created by Кристина Пастухова on 01.06.2024.
 //
 
 import Foundation
 import Combine
 
-class MainViewModel {
+class SearchViewModel {
 
     enum Output {
         case content([Concert])
@@ -16,7 +16,6 @@ class MainViewModel {
 
     enum Input {
         case loadData
-        case enterCityFrom(String)
     }
 
     enum Event {
@@ -42,8 +41,6 @@ class MainViewModel {
         switch input {
         case .loadData:
             loadData()
-        case .enterCityFrom(let city):
-            onEvent?(.enterCityFrom(city))
         }
     }
 
@@ -77,3 +74,4 @@ class MainViewModel {
     }
 //
 }
+
