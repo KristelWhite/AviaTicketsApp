@@ -14,14 +14,7 @@ class SearchViewController: UIViewController {
 
     private let optionsStackView = OptionsStackView()
     private let searchContainerView = SearchContainerView()
-
-    private let tableContainerView: TableContainerView = {
-        let view = TableContainerView()
-        view.layer.cornerRadius = 16
-        view.layer.masksToBounds = true
-        view.backgroundColor = Palette.grey3.color
-        return view
-    }()
+    private let tableContainerView = TableContainerView()
 
    
     override func viewDidLoad() {

@@ -64,12 +64,13 @@ class DestinationCell: UITableViewCell {
 
         destinationImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.top.bottom.equalToSuperview().inset(8)
+            make.top.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview().inset(8)
             make.width.height.equalTo(40)
         }
         vStack.snp.makeConstraints { make in
             make.leading.equalTo(destinationImageView.snp.trailing).offset(8)
-            make.centerY.equalToSuperview()
+            make.centerY.equalToSuperview().offset(4)
             make.trailing.equalToSuperview()
         }
 

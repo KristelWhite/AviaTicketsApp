@@ -16,26 +16,35 @@ class TableContainerView: UIView {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = Palette.grey5.color
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.separatorInset = UIEdgeInsets.zero
+
         return tableView
     }()
 
     init() {
         super.init(frame: .zero)
         setup()
+        setupConstraints()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
+        setupConstraints()
     }
 
     func setup() {
+        self.layer.cornerRadius = 16
+        self.layer.masksToBounds = true
+        self.backgroundColor = Palette.grey3.color
+    }
+
+    func setupConstraints() {
         self.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalToSuperview().inset(16)
+            make.leading.trailing.bottom.equalToSuperview().inset(16)
+            make.top.equalToSuperview().inset(8)
         }
-        
     }
 
     func loadData() {
