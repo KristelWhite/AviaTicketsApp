@@ -28,11 +28,11 @@ class AviaCoordinator: Coordinator {
 
     func showSearchController(with cityFrom: String) {
         let vc = SearchViewController()
-        let viewModel = SearchViewModel()
+        let viewModel = SearchViewModel(cityFrom: cityFrom)
         viewModel.onEvent = { [weak self] event in
             switch event {
             case .enterCityTo(let city):
-//                self?.dismissController(vc: vc)
+                self?.dismissController(vc: vc)
                 self?.showRouteSuggestionsController(with: city)
             }
         }

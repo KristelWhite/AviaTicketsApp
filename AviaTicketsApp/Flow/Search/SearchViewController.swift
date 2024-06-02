@@ -21,7 +21,17 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         setEvents()
         setupUI()
-        tableContainerView.loadData()
+
+        viewModel?.onOutput = { [weak self] output in
+            switch output {
+            case .content(let destinations):
+                self?.tableContainerView.configure(with: destinations)
+            case .setCityFrom(let city):
+                self?.searchContainerView.setCityFrom(text: city)
+            }
+        }
+        viewModel?.handle(.getCityFrom)
+        viewModel?.handle(.loadData)
     }
 
     func setEvents() {

@@ -14,21 +14,35 @@ class SearchContainerView: UIView {
 
     init() {
         super.init(frame: .zero)
-        setupView()
-
+        setup()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupView()
-        cityFromTextField.delegate = self
+        setup()
     }
 
-    private func setupView() {
+    func setupView(){
         backgroundColor = Palette.grey3.color
         Shadow.base.apply(to: self)
         layer.cornerRadius = 16
+    }
+    private func setup() {
+        cityFromTextField.delegate = self
+        setupView()
+        addSubviews()
 
+    }
+
+    func setCityFrom(text: String) {
+        self.cityFromTextField.text = text
+    }
+
+    func setCityTo(text: String) {
+        self.cityToTextField.text = text
+    }
+
+    private func addSubviews() {
         let vStack: UIStackView = {
             let verticalStackView = UIStackView()
             verticalStackView.axis = .vertical
@@ -37,15 +51,17 @@ class SearchContainerView: UIView {
             verticalStackView.spacing = 8
             return verticalStackView
         }()
+
         let separaterView: UIView = {
             let view = UIView()
             view.backgroundColor = Palette.grey4.color
             return view
         }()
+
         addSubview(vStack)
-        addTextFieldWithImageView(to: vStack, field: &cityFromTextField,text: "", placeholder: "Куда - Турция", image: Asset.plane.image, imageColor: Palette.grey6.color)
+        addTextFieldWithImageView(to: vStack, textField: cityFromTextField,text: nil, placeholder: "Куда - Турция", image: Asset.plane.image, imageColor: Palette.grey6.color)
         vStack.addArrangedSubview(separaterView)
-        addTextFieldWithImageView(to: vStack, field: &cityToTextField,text: nil, placeholder: "Откуда - Москва", image: Asset.search.image, imageColor: Palette.grey7.color)
+        addTextFieldWithImageView(to: vStack, textField: cityToTextField,text: nil, placeholder: "Откуда - Москва", image: Asset.search.image, imageColor: Palette.grey7.color)
 
         vStack.snp.makeConstraints { make in
             make.top.bottom.leading.trailing.equalToSuperview().inset(16)
@@ -56,9 +72,7 @@ class SearchContainerView: UIView {
         }
     }
 
-    private func addTextFieldWithImageView(to superView: UIStackView, field: inout UITextField, text: String?, placeholder: String, image: UIImage, imageColor: UIColor){
-        let textField: UITextField = {
-            let textField = UITextField()
+    private func addTextFieldWithImageView(to superView: UIStackView, textField: UITextField, text: String?, placeholder: String, image: UIImage, imageColor: UIColor){
             let placeholderText = placeholder
             let attributes: [NSAttributedString.Key: Any] = [
                 .foregroundColor: Palette.grey6.color, .font: Typography.buttonText.font
@@ -71,8 +85,7 @@ class SearchContainerView: UIView {
             if let text = text {
                 textField.text = text
             }
-            return textField
-        }()
+
         let imageView: UIImageView = {
             let imageView = UIImageView()
             imageView.image = image
@@ -98,7 +111,6 @@ class SearchContainerView: UIView {
             make.width.equalTo(24)
         }
 
-        field = textField
     }
 }
 

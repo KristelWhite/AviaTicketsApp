@@ -54,14 +54,8 @@ class TableContainerView: UIView {
         }
     }
 
-    func loadData() {
-        let destinations = [
-            DestinationProps(id: UUID(), name: "Стамбул", description: "Популярное направление", image: Asset.tyrky.image),
-            DestinationProps(id: UUID(), name: "Сочи", description: "Популярное направление", image: Asset.sochi.image),
-            DestinationProps(id: UUID(), name: "Пхукет", description: "Популярное направление", image: Asset.phuket.image)
-        ]
-
-        destinationDataSource.applySnapshot(destinations: destinations)
+    func configure(with props: [DestinationProps]) {
+        destinationDataSource.applySnapshot(destinations: props)
     }
 }
 
