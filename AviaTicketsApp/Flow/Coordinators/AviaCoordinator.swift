@@ -29,9 +29,13 @@ class AviaCoordinator: Coordinator {
     func showSearchController(with cityFrom: String) {
         let vc = SearchViewController()
         let viewModel = SearchViewModel()
-//        viewModel.onEvent = { [weak self] event in
-//            switch event {
-//        }
+        viewModel.onEvent = { [weak self] event in
+            switch event {
+            case .enterCityTo(let city):
+//                self?.dismissController(vc: vc)
+                self?.showRouteSuggestionsController(with: city)
+            }
+        }
         vc.viewModel = viewModel
 
         if #available(iOS 15.0, *) {
@@ -44,10 +48,24 @@ class AviaCoordinator: Coordinator {
         } else {
             vc.modalPresentationStyle = .automatic
         }
-
         navigationController.present(vc, animated: true)
-//        navigationController.pushViewController(vc, animated: false)
     }
+
+    func dismissController(vc: UIViewController) {
+        vc.dismiss(animated: true)
+    }
+
+        func showRouteSuggestionsController(with cityTo: String) {
+            let vc = RouteSuggestionsViewController()
+            let viewModel = RouteSuggestionsViewModel()
+//            viewModel.onEvent = { [weak self] event in
+//                switch event {
+//                case .enterCityTo(let city):
+//                    <#code#>
+//                }
+            vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: false)
+        }
 
 }
 class CommingSoonCoordinator: Coordinator {

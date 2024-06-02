@@ -39,6 +39,11 @@ class DestinationDataSource {
         snapshot.appendItems(destinations, toSection: .main)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
+
+    func getItem(at indexPath: IndexPath) -> DestinationProps? {
+            return dataSource.itemIdentifier(for: indexPath)
+        }
+
 }
 
 extension DestinationDataSource {

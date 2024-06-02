@@ -19,8 +19,21 @@ class SearchViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setEvents()
         setupUI()
         tableContainerView.loadData()
+    }
+
+    func setEvents() {
+        tableContainerView.onEvent = { [weak self] event in
+            switch event {
+            case .selectCity(let city):
+                print("controller")
+                self?.viewModel?.handle(.tapSelectedCity(city))
+
+            }
+
+        }
     }
 
     func setupUI() {
@@ -49,6 +62,4 @@ class SearchViewController: UIViewController {
             
         }
     }
-
-   
 }

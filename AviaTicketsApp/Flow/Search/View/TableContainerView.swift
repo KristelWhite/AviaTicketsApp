@@ -9,6 +9,12 @@ import UIKit
 
 class TableContainerView: UIView {
 
+    enum Event {
+        case selectCity(String)
+    }
+
+    var onEvent: ((Event) -> Void)?
+
     private lazy var destinationDataSource = DestinationDataSource(tableView: tableView)
 
     private let tableView: UITableView = {
@@ -37,6 +43,7 @@ class TableContainerView: UIView {
         self.layer.cornerRadius = 16
         self.layer.masksToBounds = true
         self.backgroundColor = Palette.grey3.color
+        tableView.delegate = self
     }
 
     func setupConstraints() {
@@ -55,5 +62,15 @@ class TableContainerView: UIView {
         ]
 
         destinationDataSource.applySnapshot(destinations: destinations)
+    }
+}
+
+extension TableContainerView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        print("set select")
+        guard let props = destinationDataSource.getItem(at: indexPath) else  { return }
+        onEvent?(.selectCity(props.name))
+
     }
 }

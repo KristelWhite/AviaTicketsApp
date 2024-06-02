@@ -138,8 +138,20 @@ class MainViewController: UIViewController {
             }
         }
         viewModel?.handle(.loadData)
-        viewModel?.handle(.enterCityFrom(""))
+
+        //обработка касания textfield
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(textFieldTapped))
+        cityToTextField.isUserInteractionEnabled = true
+        cityToTextField.addGestureRecognizer(tapGesture)
+
+
     }
+    @objc func textFieldTapped() {
+        viewModel?.handle(.enterCityFrom(cityFromTextField.text ?? ""))
+            print("Текстовое поле было нажато")
+        cityToTextField.becomeFirstResponder()
+        }
 
     private func setupUI() {
         vStack.addArrangedSubview(cityFromTextField)

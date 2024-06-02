@@ -53,7 +53,8 @@ class DestinationCell: UITableViewCell {
 
     private func setup() {
         contentView.backgroundColor = UIColor.clear // Прозрачный фон для содержимого ячейки
-        backgroundColor = UIColor.clear // Прозрачный фон самой ячейки
+        backgroundColor = UIColor.clear // Прозрачный фон самой ячейкиё
+        selectionStyle = .none 
     }
 
     private func setupsConstraints() {
@@ -76,9 +77,9 @@ class DestinationCell: UITableViewCell {
 
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: false)
+//    }
 
     func configure(with destination: DestinationProps) {
         destinationImageView.image = destination.image

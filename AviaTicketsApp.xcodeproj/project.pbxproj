@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		0494A20ABCF54BD47F971A4C /* Pods_AviaTicketsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483D0D017FB00C759DC5473 /* Pods_AviaTicketsApp.framework */; };
 		637500002C0C8C8500EC1E36 /* TableContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFFF2C0C8C8500EC1E36 /* TableContainerView.swift */; };
+		637500042C0CB48B00EC1E36 /* RouteSuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637500032C0CB48B00EC1E36 /* RouteSuggestionsViewController.swift */; };
+		637500062C0CB4AF00EC1E36 /* RouteSuggestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637500052C0CB4AF00EC1E36 /* RouteSuggestionsViewModel.swift */; };
+		637500082C0CB4BB00EC1E36 /* RouteSuggestionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637500072C0CB4BB00EC1E36 /* RouteSuggestionsModel.swift */; };
+		6375000A2C0CB66200EC1E36 /* OptionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637500092C0CB66200EC1E36 /* OptionsDataSource.swift */; };
+		6375000C2C0CB68B00EC1E36 /* RouteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375000B2C0CB68B00EC1E36 /* RouteDataSource.swift */; };
+		637500102C0CB6C300EC1E36 /* RouteSearchContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375000F2C0CB6C300EC1E36 /* RouteSearchContainerView.swift */; };
+		637500122C0CB7A500EC1E36 /* RouteContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637500112C0CB7A500EC1E36 /* RouteContainerView.swift */; };
 		6375FF932C088D0C00EC1E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FF922C088D0C00EC1E36 /* AppDelegate.swift */; };
 		6375FF952C088D0C00EC1E36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FF942C088D0C00EC1E36 /* SceneDelegate.swift */; };
 		6375FF972C088D0C00EC1E36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FF962C088D0C00EC1E36 /* ViewController.swift */; };
@@ -51,6 +58,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		637500032C0CB48B00EC1E36 /* RouteSuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSuggestionsViewController.swift; sourceTree = "<group>"; };
+		637500052C0CB4AF00EC1E36 /* RouteSuggestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSuggestionsViewModel.swift; sourceTree = "<group>"; };
+		637500072C0CB4BB00EC1E36 /* RouteSuggestionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSuggestionsModel.swift; sourceTree = "<group>"; };
+		637500092C0CB66200EC1E36 /* OptionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsDataSource.swift; sourceTree = "<group>"; };
+		6375000B2C0CB68B00EC1E36 /* RouteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDataSource.swift; sourceTree = "<group>"; };
+		6375000F2C0CB6C300EC1E36 /* RouteSearchContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSearchContainerView.swift; sourceTree = "<group>"; };
+		637500112C0CB7A500EC1E36 /* RouteContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteContainerView.swift; sourceTree = "<group>"; };
 		6375FF8F2C088D0C00EC1E36 /* AviaTicketsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviaTicketsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6375FF922C088D0C00EC1E36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6375FF942C088D0C00EC1E36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +132,36 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		637500022C0CA8BE00EC1E36 /* ContryAdded */ = {
+			isa = PBXGroup;
+			children = (
+				6375000E2C0CB69F00EC1E36 /* Views */,
+				6375000D2C0CB68F00EC1E36 /* DataSource */,
+				637500032C0CB48B00EC1E36 /* RouteSuggestionsViewController.swift */,
+				637500052C0CB4AF00EC1E36 /* RouteSuggestionsViewModel.swift */,
+				637500072C0CB4BB00EC1E36 /* RouteSuggestionsModel.swift */,
+			);
+			path = ContryAdded;
+			sourceTree = "<group>";
+		};
+		6375000D2C0CB68F00EC1E36 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				637500092C0CB66200EC1E36 /* OptionsDataSource.swift */,
+				6375000B2C0CB68B00EC1E36 /* RouteDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		6375000E2C0CB69F00EC1E36 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6375000F2C0CB6C300EC1E36 /* RouteSearchContainerView.swift */,
+				637500112C0CB7A500EC1E36 /* RouteContainerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		6375FF862C088D0C00EC1E36 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +219,7 @@
 		6375FFA82C088F8A00EC1E36 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				637500022C0CA8BE00EC1E36 /* ContryAdded */,
 				6375FFE82C0B788500EC1E36 /* Search */,
 				6375FFD52C0A193300EC1E36 /* CoomingSoon */,
 				6375FFD42C0A190600EC1E36 /* Coordinators */,
@@ -500,23 +545,30 @@
 				6375FFAF2C08922E00EC1E36 /* TabBarConfigurator.swift in Sources */,
 				6375FFEE2C0B78EB00EC1E36 /* SearchModel.swift in Sources */,
 				6375FFCC2C08BC2E00EC1E36 /* ConsertCell.swift in Sources */,
+				6375000A2C0CB66200EC1E36 /* OptionsDataSource.swift in Sources */,
 				6375FFFC2C0C7A7800EC1E36 /* DestinationProps.swift in Sources */,
 				6375FFAD2C08921100EC1E36 /* TabBarModel.swift in Sources */,
 				6375FFF82C0C731B00EC1E36 /* OptionView.swift in Sources */,
+				637500102C0CB6C300EC1E36 /* RouteSearchContainerView.swift in Sources */,
 				6375FFDC2C0B219C00EC1E36 /* Shadows.swift in Sources */,
 				6375FFEA2C0B78C800EC1E36 /* SearchViewController.swift in Sources */,
 				6375FFB12C08955A00EC1E36 /* MainViewController.swift in Sources */,
+				637500042C0CB48B00EC1E36 /* RouteSuggestionsViewController.swift in Sources */,
+				6375000C2C0CB68B00EC1E36 /* RouteDataSource.swift in Sources */,
 				6375FFE52C0B4F9900EC1E36 /* TicketsResponse.swift in Sources */,
 				6375FFEC2C0B78E000EC1E36 /* SearchViewModel.swift in Sources */,
 				6375FFDE2C0B265C00EC1E36 /* Borders.swift in Sources */,
 				6375FFBA2C0896F300EC1E36 /* CommingSoonViewController.swift in Sources */,
 				6375FF932C088D0C00EC1E36 /* AppDelegate.swift in Sources */,
 				6375FFFE2C0C7AA100EC1E36 /* DestinationTableViewCell.swift in Sources */,
+				637500082C0CB4BB00EC1E36 /* RouteSuggestionsModel.swift in Sources */,
 				6375FF952C088D0C00EC1E36 /* SceneDelegate.swift in Sources */,
 				6375FFF62C0C72E300EC1E36 /* OptionsStackView.swift in Sources */,
 				6375FFB82C0895CB00EC1E36 /* AppCoordinator.swift in Sources */,
 				6375FFDA2C0A3C2900EC1E36 /* Typography.swift in Sources */,
 				6375FFCA2C08BBED00EC1E36 /* ConcertDataSource.swift in Sources */,
+				637500122C0CB7A500EC1E36 /* RouteContainerView.swift in Sources */,
+				637500062C0CB4AF00EC1E36 /* RouteSuggestionsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

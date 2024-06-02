@@ -16,10 +16,11 @@ class SearchViewModel {
 
     enum Input {
         case loadData
+        case tapSelectedCity(String)
     }
 
     enum Event {
-        case enterCityFrom(String)
+        case enterCityTo(String)
     }
 
     var onOutput: ((Output) -> Void)?
@@ -41,6 +42,10 @@ class SearchViewModel {
         switch input {
         case .loadData:
             loadData()
+        case .tapSelectedCity(let city):
+            print("vm")
+            onEvent?(.enterCityTo(city))
+
         }
     }
 

@@ -9,14 +9,19 @@ import UIKit
 
 class SearchContainerView: UIView {
 
+    var cityFromTextField = UITextField()
+    var cityToTextField = UITextField()
+
     init() {
         super.init(frame: .zero)
         setupView()
+
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
+        cityFromTextField.delegate = self
     }
 
     private func setupView() {
@@ -38,9 +43,9 @@ class SearchContainerView: UIView {
             return view
         }()
         addSubview(vStack)
-        addTextFieldWithImageView(to: vStack, text: "", placeholder: "Куда - Турция", image: Asset.plane.image, imageColor: Palette.grey6.color)
+        addTextFieldWithImageView(to: vStack, field: &cityFromTextField,text: "", placeholder: "Куда - Турция", image: Asset.plane.image, imageColor: Palette.grey6.color)
         vStack.addArrangedSubview(separaterView)
-        addTextFieldWithImageView(to: vStack, text: nil, placeholder: "Откуда - Москва", image: Asset.search.image, imageColor: Palette.grey7.color)
+        addTextFieldWithImageView(to: vStack, field: &cityToTextField,text: nil, placeholder: "Откуда - Москва", image: Asset.search.image, imageColor: Palette.grey7.color)
 
         vStack.snp.makeConstraints { make in
             make.top.bottom.leading.trailing.equalToSuperview().inset(16)
@@ -51,7 +56,7 @@ class SearchContainerView: UIView {
         }
     }
 
-    private func addTextFieldWithImageView(to superView: UIStackView, text: String?, placeholder: String, image: UIImage, imageColor: UIColor){
+    private func addTextFieldWithImageView(to superView: UIStackView, field: inout UITextField, text: String?, placeholder: String, image: UIImage, imageColor: UIColor){
         let textField: UITextField = {
             let textField = UITextField()
             let placeholderText = placeholder
@@ -92,5 +97,21 @@ class SearchContainerView: UIView {
         imageView.snp.makeConstraints { make in
             make.width.equalTo(24)
         }
+
+        field = textField
     }
+}
+
+extension SearchContainerView: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+            // Проверяем, содержит ли текстовое поле текст
+            if let text = textField.text, !text.isEmpty {
+                print("Текстовое поле заполнено: \(text)")
+                // Здесь может быть ваш код, который реагирует на окончание ввода, например:
+                // Отправка данных на сервер, обновление интерфейса и т.д.
+            } else {
+                print("Текстовое поле пустое или текст был удален")
+            }
+        }
+
 }
