@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableContainerView: UIView {
+class PlaceTableContainerView: UIView {
 
     enum Event {
         case selectCity(String)
@@ -59,7 +59,7 @@ class TableContainerView: UIView {
     }
 }
 
-extension TableContainerView: UITableViewDelegate {
+extension PlaceTableContainerView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         print("set select")

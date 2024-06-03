@@ -8,8 +8,8 @@
 import UIKit
 
 struct MainModel {
-    let cityFrom: String
-    let cityTo: String
+    var cityFrom: String?
+    var cityTo: String?
 }
 
 struct Concert: Hashable {

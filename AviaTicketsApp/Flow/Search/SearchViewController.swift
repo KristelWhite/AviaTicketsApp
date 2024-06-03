@@ -14,7 +14,7 @@ class SearchViewController: UIViewController {
 
     private let optionsStackView = OptionsStackView()
     private let searchContainerView = SearchContainerView()
-    private let tableContainerView = TableContainerView()
+    private let tableContainerView = PlaceTableContainerView()
 
    
     override func viewDidLoad() {
@@ -32,6 +32,7 @@ class SearchViewController: UIViewController {
         }
         viewModel?.handle(.getCityFrom)
         viewModel?.handle(.loadData)
+
     }
 
     func setEvents() {

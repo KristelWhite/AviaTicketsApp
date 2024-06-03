@@ -24,15 +24,16 @@ enum Typography {
         case .title2:
             return UIFont.systemFont(ofSize: 20.0, weight: .semibold)
         case .title3:
-            return UIFont.systemFont(ofSize: 16.0, weight: .medium)
+            return UIFont.systemFont(ofSize: 16.0, weight: .semibold)
         case .title4:
-            return UIFont.systemFont(ofSize: 14.0, weight: .regular)
+            return UIFont.italicSystemFont(ofSize: 14)
+//            return UIFont.systemFont(ofSize: 14.0, weight: .medium)
         case .text1:
             return UIFont.systemFont(ofSize: 16.0, weight: .regular)
         case .text2:
             return UIFont.systemFont(ofSize: 14.0, weight: .regular)
         case .buttonText:
-            return UIFont.systemFont(ofSize: 16.0, weight: .regular)
+            return UIFont.systemFont(ofSize: 16.0, weight: .semibold)
         case .tabText:
             return UIFont.systemFont(ofSize: 10.0, weight: .regular)
         }

@@ -24,6 +24,7 @@ enum Palette {
     case red
     case orange
     case extraBlack
+    case priceBlue
 
     var color: UIColor {
         switch self {
@@ -47,6 +48,8 @@ enum Palette {
             return UIColor(hex: "#FFFFFF")
         case .blue:
             return UIColor(hex: "#4C95FE")
+        case .priceBlue:
+            return UIColor(hex: "#2261BC")
         case .darkBlue:
             return UIColor(hex: "#00427D")
         case .green:

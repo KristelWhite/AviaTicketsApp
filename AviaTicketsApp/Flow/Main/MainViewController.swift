@@ -138,6 +138,8 @@ class MainViewController: UIViewController {
             }
         }
         viewModel?.handle(.loadData)
+        //
+        viewModel?.handle(.enterCityFrom("jnkrf"))
 
         //обработка касания textfield
 

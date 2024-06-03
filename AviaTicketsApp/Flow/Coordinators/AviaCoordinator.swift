@@ -31,9 +31,9 @@ class AviaCoordinator: Coordinator {
         let viewModel = SearchViewModel(cityFrom: cityFrom)
         viewModel.onEvent = { [weak self] event in
             switch event {
-            case .enterCityTo(let city):
+            case .enterCityTo(let configureModel):
                 self?.dismissController(vc: vc)
-                self?.showRouteSuggestionsController(with: city)
+                self?.showRouteSuggestionsController(with: configureModel)
             }
         }
         vc.viewModel = viewModel
@@ -55,9 +55,9 @@ class AviaCoordinator: Coordinator {
         vc.dismiss(animated: true)
     }
 
-        func showRouteSuggestionsController(with cityTo: String) {
+        func showRouteSuggestionsController(with configureModel: MainModel) {
             let vc = RouteSuggestionsViewController()
-            let viewModel = RouteSuggestionsViewModel()
+            let viewModel = RouteSuggestionsViewModel(configureModel: configureModel)
 //            viewModel.onEvent = { [weak self] event in
 //                switch event {
 //                case .enterCityTo(let city):
