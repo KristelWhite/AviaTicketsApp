@@ -23,7 +23,6 @@ class PlaceTableContainerView: UIView {
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = Palette.grey5.color
         tableView.separatorInset = UIEdgeInsets.zero
-
         return tableView
     }()
 
@@ -39,30 +38,35 @@ class PlaceTableContainerView: UIView {
         setupConstraints()
     }
 
-    func setup() {
+    //  MARK: - public methods
+
+    func configure(with props: [DestinationProps]) {
+        destinationDataSource.applySnapshot(destinations: props)
+    }
+
+    //  MARK: - private methods
+
+    private func setup() {
         self.layer.cornerRadius = 16
         self.layer.masksToBounds = true
         self.backgroundColor = Palette.grey3.color
         tableView.delegate = self
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         self.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview().inset(16)
             make.top.equalToSuperview().inset(8)
         }
     }
-
-    func configure(with props: [DestinationProps]) {
-        destinationDataSource.applySnapshot(destinations: props)
-    }
 }
+
+//  MARK: - UITableViewDelegate
 
 extension PlaceTableContainerView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        print("set select")
         guard let props = destinationDataSource.getItem(at: indexPath) else  { return }
         onEvent?(.selectCity(props.name))
 

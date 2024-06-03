@@ -72,6 +72,7 @@ class RouteSearchContainerView: UIView {
         return clearButton
     }()
 
+    //    MARK: - init
 
     init() {
         super.init(frame: .zero)
@@ -83,6 +84,9 @@ class RouteSearchContainerView: UIView {
         setup()
 
     }
+
+    //    MARK: - public
+
     func setCityFrom(text: String) {
         self.cityFromTextField.text = text
     }
@@ -91,13 +95,15 @@ class RouteSearchContainerView: UIView {
         self.cityToTextField.text = text
     }
 
+    //    MARK: - private
+
     private func setup() {
         setupView()
         addSubviews()
         addActions()
     }
 
-    func addActions() {
+    private func addActions() {
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         exchangeButton.addTarget(self, action: #selector(exchangeButtonTapped), for: .touchUpInside)
         clearCityToButton.addTarget(self, action: #selector(clearCityToTextField), for: .touchUpInside)
@@ -112,6 +118,18 @@ class RouteSearchContainerView: UIView {
         cityToTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
 
+    //  MARK: - Action
+
+    @objc func backButtonTapped() {
+        onEvent?(.backButton)
+    }
+
+    @objc func exchangeButtonTapped() {
+        let temp = cityToTextField.text
+        cityToTextField.text = cityFromTextField.text
+        cityFromTextField.text = temp
+    }
+
     @objc func textFieldDidChange(_ textField: UITextField) {
         textField.text = textField.text?.filter { "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя- ".contains($0) }
     }
@@ -123,7 +141,6 @@ class RouteSearchContainerView: UIView {
     @objc func clearCityFromTextField() {
         cityFromTextField.text = ""
     }
-
 
     private func setupView(){
         backgroundColor = Palette.grey3.color
@@ -196,18 +213,6 @@ class RouteSearchContainerView: UIView {
         exchangeButton.snp.makeConstraints { make in
             make.width.equalTo(24)
         }
-
-    }
-
-    @objc func backButtonTapped() {
-        onEvent?(.backButton)
-    }
-
-    @objc func exchangeButtonTapped() {
-        // Обмен текстом между текстовыми полями
-        let temp = cityToTextField.text
-        cityToTextField.text = cityFromTextField.text
-        cityFromTextField.text = temp
     }
 }
 

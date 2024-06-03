@@ -37,14 +37,6 @@ struct APIConfig {
     }
 }
 
-// MARK: - Abstract Request Class
-
-//class AbstractRequest {
-//    func fetch<T: Decodable>(endpoint: APIConfig.Endpoint) -> AnyPublisher<T, Error> {
-//        return APIService.shared.fetch(from: endpoint)
-//    }
-//}
-
 protocol RequestManagerAbstract: AnyObject {
     func fetchConcerts() -> AnyPublisher<ConcertListResponse, Error>
     func fetchFlights() -> AnyPublisher<FligthListResponse, Error>

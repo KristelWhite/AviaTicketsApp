@@ -1,23 +1,11 @@
 //
-//  MainModel.swift
+//  ConcertImage.swift
 //  AviaTicketsApp
 //
 //  Created by Кристина Пастухова on 30.05.2024.
 //
 
 import UIKit
-
-struct FlightModel {
-    var cityFrom: String?
-    var cityTo: String?
-}
-
-struct Concert: Hashable {
-    let artist: String
-    let city: String
-    let price: String
-    let image: UIImage
-}
 
 enum ConcertImage {
     static func getImage(for id: Int) -> UIImage {

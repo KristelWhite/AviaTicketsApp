@@ -15,8 +15,8 @@ class SearchContainerView: UIView {
     }
     var onEvent: ((Event) -> Void)?
 
-    var cityFromTextField = UITextField()
-    var cityToTextField = UITextField()
+    private var cityFromTextField = UITextField()
+    private var cityToTextField = UITextField()
 
     private let clearCityToButton: UIButton = {
         let clearButton = UIButton(type: .custom)
@@ -31,6 +31,8 @@ class SearchContainerView: UIView {
         clearButton.setImage(Asset.cansel.image, for: .normal)
         return clearButton
     }()
+
+    //  MARK: - init
     
     init() {
         super.init(frame: .zero)
@@ -42,11 +44,24 @@ class SearchContainerView: UIView {
         setup()
     }
 
-    func setupView(){
+    //  MARK: - public methods
+
+    func setCityFrom(text: String) {
+        self.cityFromTextField.text = text
+    }
+
+    func setCityTo(text: String) {
+        self.cityToTextField.text = text
+    }
+
+    //  MARK: - private methods
+
+    private func setupView(){
         backgroundColor = Palette.grey3.color
         Shadow.base.apply(to: self)
         layer.cornerRadius = 16
     }
+
     private func setup() {
         cityToTextField.delegate = self
         cityFromTextField.delegate = self
@@ -78,14 +93,6 @@ class SearchContainerView: UIView {
 
     @objc func clearCityFromTextField() {
         cityFromTextField.text = ""
-    }
-
-    func setCityFrom(text: String) {
-        self.cityFromTextField.text = text
-    }
-
-    func setCityTo(text: String) {
-        self.cityToTextField.text = text
     }
 
     private func addSubviews() {
@@ -160,33 +167,21 @@ class SearchContainerView: UIView {
     }
 }
 
+//  MARK: - UITextFieldDelegate
+
 extension SearchContainerView: UITextFieldDelegate {
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//            if let text = textField.text, !text.isEmpty {
-//                print("Текстовое поле заполнено: \(text)")
-//                onEvent?(.getCityTo(text))
-//            } else {
-//                print("Текстовое поле пустое или текст был удален")
-//            }
-//        }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == cityToTextField {
             if let text = textField.text, !text.isEmpty {
-                print("Текстовое поле заполнено: \(text)")
                 onEvent?(.getCityTo(text))
-            } else {
-                print("Текстовое поле пустое или текст был удален")
             }
         } else if  textField == cityFromTextField {
             if let text = textField.text, !text.isEmpty {
-                print("Текстовое поле заполнено: \(text)")
                 onEvent?(.changeCityFrom(text))
-            } else {
-                print("Текстовое поле пустое или текст был удален")
             }
         }
         textField.resignFirstResponder()
            return true
        }
-
 }

@@ -26,10 +26,9 @@
 		6375FF9C2C088D1500EC1E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6375FF9B2C088D1500EC1E36 /* Assets.xcassets */; };
 		6375FF9F2C088D1500EC1E36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6375FF9D2C088D1500EC1E36 /* LaunchScreen.storyboard */; };
 		6375FFAD2C08921100EC1E36 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFAC2C08921100EC1E36 /* TabBarModel.swift */; };
-		6375FFAF2C08922E00EC1E36 /* TabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFAE2C08922E00EC1E36 /* TabBarConfigurator.swift */; };
 		6375FFB12C08955A00EC1E36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFB02C08955A00EC1E36 /* MainViewController.swift */; };
 		6375FFB42C08959000EC1E36 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFB32C08959000EC1E36 /* MainViewModel.swift */; };
-		6375FFB62C0895B400EC1E36 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFB52C0895B400EC1E36 /* FlightModel.swift */; };
+		6375FFB62C0895B400EC1E36 /* ConcertImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFB52C0895B400EC1E36 /* ConcertImage.swift */; };
 		6375FFB82C0895CB00EC1E36 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFB72C0895CB00EC1E36 /* AppCoordinator.swift */; };
 		6375FFBF2C089DBD00EC1E36 /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6375FFBE2C089DBC00EC1E36 /* Common.strings */; };
 		6375FFC12C089DCD00EC1E36 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6375FFC02C089DCD00EC1E36 /* Main.strings */; };
@@ -49,16 +48,16 @@
 		6375FFE72C0B4FA800EC1E36 /* FlightsResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFE62C0B4FA800EC1E36 /* FlightsResponce.swift */; };
 		6375FFEA2C0B78C800EC1E36 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFE92C0B78C800EC1E36 /* SearchViewController.swift */; };
 		6375FFEC2C0B78E000EC1E36 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFEB2C0B78E000EC1E36 /* SearchViewModel.swift */; };
-		6375FFEE2C0B78EB00EC1E36 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFED2C0B78EB00EC1E36 /* SearchModel.swift */; };
 		6375FFF02C0B791900EC1E36 /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFEF2C0B791900EC1E36 /* SearchDataSource.swift */; };
-		6375FFF42C0C659E00EC1E36 /* UIControl extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFF32C0C659E00EC1E36 /* UIControl extension.swift */; };
 		6375FFF62C0C72E300EC1E36 /* OptionsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFF52C0C72E300EC1E36 /* OptionsStackView.swift */; };
-		6375FFF82C0C731B00EC1E36 /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFF72C0C731B00EC1E36 /* OptionView.swift */; };
 		6375FFFA2C0C746100EC1E36 /* SearchContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFF92C0C746100EC1E36 /* SearchContainerView.swift */; };
 		6375FFFC2C0C7A7800EC1E36 /* DestinationProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFFB2C0C7A7800EC1E36 /* DestinationProps.swift */; };
 		6375FFFE2C0C7AA100EC1E36 /* DestinationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFFD2C0C7AA100EC1E36 /* DestinationTableViewCell.swift */; };
 		6389A3C52C0DDA480021BFAE /* Data extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389A3C42C0DDA480021BFAE /* Data extension.swift */; };
 		6389A3C72C0DE87D0021BFAE /* PlugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389A3C62C0DE87D0021BFAE /* PlugViewController.swift */; };
+		6389A3CB2C0E19D80021BFAE /* CommingSoonCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389A3CA2C0E19D80021BFAE /* CommingSoonCoordinator.swift */; };
+		6389A3CE2C0E1D060021BFAE /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389A3CD2C0E1D060021BFAE /* FlightModel.swift */; };
+		6389A3D12C0E1F9F0021BFAE /* ConcertProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389A3D02C0E1F9F0021BFAE /* ConcertProps.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,10 +80,9 @@
 		6375FF9E2C088D1500EC1E36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6375FFA02C088D1500EC1E36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6375FFAC2C08921100EC1E36 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
-		6375FFAE2C08922E00EC1E36 /* TabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurator.swift; sourceTree = "<group>"; };
 		6375FFB02C08955A00EC1E36 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6375FFB32C08959000EC1E36 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		6375FFB52C0895B400EC1E36 /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
+		6375FFB52C0895B400EC1E36 /* ConcertImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertImage.swift; sourceTree = "<group>"; };
 		6375FFB72C0895CB00EC1E36 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		6375FFBE2C089DBC00EC1E36 /* Common.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Common.strings; sourceTree = "<group>"; };
 		6375FFC02C089DCD00EC1E36 /* Main.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Main.strings; sourceTree = "<group>"; };
@@ -104,17 +102,17 @@
 		6375FFE62C0B4FA800EC1E36 /* FlightsResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsResponce.swift; sourceTree = "<group>"; };
 		6375FFE92C0B78C800EC1E36 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6375FFEB2C0B78E000EC1E36 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		6375FFED2C0B78EB00EC1E36 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		6375FFEF2C0B791900EC1E36 /* SearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
-		6375FFF32C0C659E00EC1E36 /* UIControl extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl extension.swift"; sourceTree = "<group>"; };
 		6375FFF52C0C72E300EC1E36 /* OptionsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsStackView.swift; sourceTree = "<group>"; };
-		6375FFF72C0C731B00EC1E36 /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
 		6375FFF92C0C746100EC1E36 /* SearchContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContainerView.swift; sourceTree = "<group>"; };
 		6375FFFB2C0C7A7800EC1E36 /* DestinationProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationProps.swift; sourceTree = "<group>"; };
 		6375FFFD2C0C7AA100EC1E36 /* DestinationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationTableViewCell.swift; sourceTree = "<group>"; };
 		6375FFFF2C0C8C8500EC1E36 /* PlaceTableContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableContainerView.swift; sourceTree = "<group>"; };
 		6389A3C42C0DDA480021BFAE /* Data extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data extension.swift"; sourceTree = "<group>"; };
 		6389A3C62C0DE87D0021BFAE /* PlugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugViewController.swift; sourceTree = "<group>"; };
+		6389A3CA2C0E19D80021BFAE /* CommingSoonCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommingSoonCoordinator.swift; sourceTree = "<group>"; };
+		6389A3CD2C0E1D060021BFAE /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
+		6389A3D02C0E1F9F0021BFAE /* ConcertProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertProps.swift; sourceTree = "<group>"; };
 		9450322BD7A53063FFB9D3B9 /* Pods-AviaTicketsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviaTicketsApp.debug.xcconfig"; path = "Target Support Files/Pods-AviaTicketsApp/Pods-AviaTicketsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C483D0D017FB00C759DC5473 /* Pods_AviaTicketsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AviaTicketsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E857FA6C4ACA5DAD79DC13A2 /* Pods-AviaTicketsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviaTicketsApp.release.xcconfig"; path = "Target Support Files/Pods-AviaTicketsApp/Pods-AviaTicketsApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,9 +153,9 @@
 		6375000D2C0CB68F00EC1E36 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				637500092C0CB66200EC1E36 /* OptionsDataSource.swift */,
 				6375000B2C0CB68B00EC1E36 /* RouteDataSource.swift */,
 				637500132C0D05C200EC1E36 /* RouteProps.swift */,
-				637500092C0CB66200EC1E36 /* OptionsDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -206,6 +204,8 @@
 				6375FFD62C0A381100EC1E36 /* Extensions */,
 				6375FFA92C0891D900EC1E36 /* Service */,
 				6375FFA72C088E9400EC1E36 /* Resources */,
+				6375FFD42C0A190600EC1E36 /* Coordinators */,
+				6375FFAB2C0891FA00EC1E36 /* TabBar */,
 				6375FFA82C088F8A00EC1E36 /* Flow */,
 			);
 			path = AviaTicketsApp;
@@ -238,12 +238,11 @@
 		6375FFA82C088F8A00EC1E36 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				637500022C0CA8BE00EC1E36 /* ContryAdded */,
-				6375FFE82C0B788500EC1E36 /* Search */,
-				6375FFD52C0A193300EC1E36 /* CoomingSoon */,
-				6375FFD42C0A190600EC1E36 /* Coordinators */,
-				6375FFAB2C0891FA00EC1E36 /* TabBar */,
+				6389A3CF2C0E1D220021BFAE /* GeneralModels */,
 				6375FFB22C08956D00EC1E36 /* Main */,
+				6375FFE82C0B788500EC1E36 /* Search */,
+				637500022C0CA8BE00EC1E36 /* ContryAdded */,
+				6375FFD52C0A193300EC1E36 /* CoomingSoon */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -251,24 +250,15 @@
 		6375FFA92C0891D900EC1E36 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				6375FFAA2C0891EB00EC1E36 /* Storage */,
 				6375FFA62C088E8200EC1E36 /* Networking */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		6375FFAA2C0891EB00EC1E36 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storage;
 			sourceTree = "<group>";
 		};
 		6375FFAB2C0891FA00EC1E36 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				6375FFAC2C08921100EC1E36 /* TabBarModel.swift */,
-				6375FFAE2C08922E00EC1E36 /* TabBarConfigurator.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -276,11 +266,11 @@
 		6375FFB22C08956D00EC1E36 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				6389A3CC2C0E1C740021BFAE /* Models */,
 				6375FFCD2C08BC3400EC1E36 /* View */,
 				6375FFC82C08BBD600EC1E36 /* DataSource */,
 				6375FFB02C08955A00EC1E36 /* MainViewController.swift */,
 				6375FFB32C08959000EC1E36 /* MainViewModel.swift */,
-				6375FFB52C0895B400EC1E36 /* FlightModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -308,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				6375FFC92C08BBED00EC1E36 /* ConcertDataSource.swift */,
+				6389A3D02C0E1F9F0021BFAE /* ConcertProps.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -325,6 +316,7 @@
 			children = (
 				6375FFB72C0895CB00EC1E36 /* AppCoordinator.swift */,
 				6375FFD22C0A04A300EC1E36 /* AviaCoordinator.swift */,
+				6389A3CA2C0E19D80021BFAE /* CommingSoonCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -344,7 +336,6 @@
 				6375FFD92C0A3C2900EC1E36 /* Typography.swift */,
 				6375FFDB2C0B219C00EC1E36 /* Shadows.swift */,
 				6375FFDD2C0B265C00EC1E36 /* Borders.swift */,
-				6375FFF32C0C659E00EC1E36 /* UIControl extension.swift */,
 				6389A3C42C0DDA480021BFAE /* Data extension.swift */,
 			);
 			path = Extensions;
@@ -363,11 +354,10 @@
 		6375FFE82C0B788500EC1E36 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				6375FFF12C0B791C00EC1E36 /* DataSource */,
 				6375FFF22C0B792C00EC1E36 /* View */,
+				6375FFF12C0B791C00EC1E36 /* DataSource */,
 				6375FFE92C0B78C800EC1E36 /* SearchViewController.swift */,
 				6375FFEB2C0B78E000EC1E36 /* SearchViewModel.swift */,
-				6375FFED2C0B78EB00EC1E36 /* SearchModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -386,11 +376,26 @@
 			children = (
 				6375FFF52C0C72E300EC1E36 /* OptionsStackView.swift */,
 				6375FFF92C0C746100EC1E36 /* SearchContainerView.swift */,
-				6375FFF72C0C731B00EC1E36 /* OptionView.swift */,
 				637500012C0C8EDE00EC1E36 /* Cell */,
 				6375FFFF2C0C8C8500EC1E36 /* PlaceTableContainerView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6389A3CC2C0E1C740021BFAE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6375FFB52C0895B400EC1E36 /* ConcertImage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6389A3CF2C0E1D220021BFAE /* GeneralModels */ = {
+			isa = PBXGroup;
+			children = (
+				6389A3CD2C0E1D060021BFAE /* FlightModel.swift */,
+			);
+			path = GeneralModels;
 			sourceTree = "<group>";
 		};
 		82178FC24FAE0B4558DCD373 /* Pods */ = {
@@ -547,13 +552,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6375FFF42C0C659E00EC1E36 /* UIControl extension.swift in Sources */,
 				6375FFE72C0B4FA800EC1E36 /* FlightsResponce.swift in Sources */,
 				6375FFD82C0A384C00EC1E36 /* ColorPalette.swift in Sources */,
 				637500002C0C8C8500EC1E36 /* PlaceTableContainerView.swift in Sources */,
 				6375FFE22C0B4E2800EC1E36 /* ConcertListResponse.swift in Sources */,
 				6375FFE02C0B483A00EC1E36 /* APIService.swift in Sources */,
-				6375FFB62C0895B400EC1E36 /* FlightModel.swift in Sources */,
+				6375FFB62C0895B400EC1E36 /* ConcertImage.swift in Sources */,
 				6375FFB42C08959000EC1E36 /* MainViewModel.swift in Sources */,
 				6375FFF02C0B791900EC1E36 /* SearchDataSource.swift in Sources */,
 				6375FFFA2C0C746100EC1E36 /* SearchContainerView.swift in Sources */,
@@ -562,20 +566,20 @@
 				6375FFC62C08A19A00EC1E36 /* Assets.swift in Sources */,
 				6375FFC52C08A19A00EC1E36 /* Main.swift in Sources */,
 				6375FFD32C0A04A300EC1E36 /* AviaCoordinator.swift in Sources */,
-				6375FFAF2C08922E00EC1E36 /* TabBarConfigurator.swift in Sources */,
-				6375FFEE2C0B78EB00EC1E36 /* SearchModel.swift in Sources */,
 				6375FFCC2C08BC2E00EC1E36 /* ConsertCell.swift in Sources */,
 				6375000A2C0CB66200EC1E36 /* OptionsDataSource.swift in Sources */,
 				6375FFFC2C0C7A7800EC1E36 /* DestinationProps.swift in Sources */,
 				6375FFAD2C08921100EC1E36 /* TabBarModel.swift in Sources */,
-				6375FFF82C0C731B00EC1E36 /* OptionView.swift in Sources */,
 				637500102C0CB6C300EC1E36 /* RouteSearchContainerView.swift in Sources */,
 				637500192C0D8EB700EC1E36 /* OptionCell.swift in Sources */,
 				6375FFDC2C0B219C00EC1E36 /* Shadows.swift in Sources */,
 				637500142C0D05C200EC1E36 /* RouteProps.swift in Sources */,
 				6375FFEA2C0B78C800EC1E36 /* SearchViewController.swift in Sources */,
+				6389A3CE2C0E1D060021BFAE /* FlightModel.swift in Sources */,
+				6389A3D12C0E1F9F0021BFAE /* ConcertProps.swift in Sources */,
 				6375FFB12C08955A00EC1E36 /* MainViewController.swift in Sources */,
 				637500042C0CB48B00EC1E36 /* RouteSuggestionsViewController.swift in Sources */,
+				6389A3CB2C0E19D80021BFAE /* CommingSoonCoordinator.swift in Sources */,
 				6375000C2C0CB68B00EC1E36 /* RouteDataSource.swift in Sources */,
 				6389A3C52C0DDA480021BFAE /* Data extension.swift in Sources */,
 				6375FFE52C0B4F9900EC1E36 /* TicketsResponse.swift in Sources */,

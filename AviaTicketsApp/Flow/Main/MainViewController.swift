@@ -125,11 +125,20 @@ class MainViewController: UIViewController {
         return clearButton
     }()
 
+    //  MARK: - LiveCycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Palette.black.color
 
         setupUI()
+        addActions()
+        configureViewModel()
+    }
+
+    //   MARK: - private methods
+
+    private func configureViewModel(){
         viewModel?.onOutput = { [weak self] output in
             switch output {
             case .content(let concerts):
@@ -140,8 +149,6 @@ class MainViewController: UIViewController {
         }
         viewModel?.handle(.loadData)
         viewModel?.handle(.setCityFrom)
-
-        addActions()
     }
 
     private func addActions() {

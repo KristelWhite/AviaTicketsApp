@@ -31,19 +31,15 @@ class SearchViewModel {
     var onOutput: ((Output) -> Void)?
     var onEvent: ((Event) -> Void)?
 
-    let service = RequestManager()
+    private let service = RequestManager()
     private var cancellables = Set<AnyCancellable>()
 
-    private var flightSearchModel: FlightModel! {
-        didSet{
-            print(flightSearchModel)
-        }
-    }
-
+    private var flightSearchModel: FlightModel!
 
     init(cityFrom: String) {
         updateSearch(cityFrom: cityFrom, cityTo: nil)
     }
+    // MARK: - public methods
 
     func handle(_ input: Input) {
         switch input {
@@ -70,6 +66,7 @@ class SearchViewModel {
         }
     }
 
+    // MARK: - Networking
 
     private func loadData() {
         let destinations = [
@@ -81,21 +78,15 @@ class SearchViewModel {
         onOutput?(.content(destinations))
     }
 
-    func updateSearch(cityFrom: String?, cityTo: String?) {
+    private func updateSearch(cityFrom: String?, cityTo: String?) {
         self.flightSearchModel = FlightModel(cityFrom: cityFrom, cityTo: cityTo)
-        print("update ")
     }
 
-    func update(cityFrom: String?) {
+    private func update(cityFrom: String?) {
         self.flightSearchModel.cityFrom = cityFrom
-        print("update ")
     }
-    func update(cityTo: String?) {
+    private func update(cityTo: String?) {
         self.flightSearchModel.cityTo = cityTo
-        print("update ")
     }
-
-
-//
 }
 

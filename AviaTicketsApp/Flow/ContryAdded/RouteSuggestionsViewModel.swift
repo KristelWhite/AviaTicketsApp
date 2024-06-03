@@ -30,19 +30,18 @@ class RouteSuggestionsViewModel {
     var onOutput: ((Output) -> Void)?
     var onEvent: ((Event) -> Void)?
 
-    let service = RequestManager()
+    private let service = RequestManager()
     private var cancellables = Set<AnyCancellable>()
 
     private var flightSearchModel: FlightModel!
+
+    //  MARK: - init
     
     init(configureModel: FlightModel) {
         updateSearch(cityFrom: configureModel.cityFrom, cityTo: configureModel.cityTo)
-        print(flightSearchModel)
     }
 
-    private func updateSearch(cityFrom: String?, cityTo: String?) {
-        self.flightSearchModel = FlightModel(cityFrom: cityFrom, cityTo: cityTo)
-    }
+    //  MARK: - public
 
     func handle(_ input: Input) {
         switch input {
@@ -56,6 +55,14 @@ class RouteSuggestionsViewModel {
             onOutput?(.setWay(flightSearchModel))
         }
     }
+
+    //  MARK: - private
+
+    private func updateSearch(cityFrom: String?, cityTo: String?) {
+        self.flightSearchModel = FlightModel(cityFrom: cityFrom, cityTo: cityTo)
+    }
+
+    //  MARK: - networking
 
     private func loadData() {
         service.fetchFlights()

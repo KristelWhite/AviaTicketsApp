@@ -17,6 +17,21 @@ class RouteDataSource {
         configureDataSource()
     }
 
+    //  MARK: - public
+
+    func applySnapshot(routes: [RouteProps]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, RouteProps>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(routes, toSection: .main)
+        dataSource.apply(snapshot, animatingDifferences: true)
+    }
+
+    func getItem(at indexPath: IndexPath) -> RouteProps? {
+            return dataSource.itemIdentifier(for: indexPath)
+        }
+
+    //  MARK: - private
+
     private func setup() {
         let cellReuseIdentifier = RouteCell.reuseIdentifier
         tableView.register(RouteCell.self, forCellReuseIdentifier: cellReuseIdentifier)
@@ -33,18 +48,6 @@ class RouteDataSource {
             return cell
         }
     }
-
-    func applySnapshot(routes: [RouteProps]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, RouteProps>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(routes, toSection: .main)
-        dataSource.apply(snapshot, animatingDifferences: true)
-    }
-
-    func getItem(at indexPath: IndexPath) -> RouteProps? {
-            return dataSource.itemIdentifier(for: indexPath)
-        }
-
 }
 
 extension RouteDataSource {

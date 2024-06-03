@@ -14,6 +14,7 @@ class RouteSuggestionsViewController: UIViewController{
 
     private let searchContainerView = RouteSearchContainerView()
     private let tableContainerView = RouteTableContainerView()
+
     private let optionCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -33,6 +34,8 @@ class RouteSuggestionsViewController: UIViewController{
         return button
     }()
 
+    //  MARK: - viewDidLoad
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConstraints()
@@ -40,6 +43,7 @@ class RouteSuggestionsViewController: UIViewController{
         viewModel?.handle(.setWay)
     }
 
+    //  MARK: - private
 
     private func setup(){
         configureCollectionView()
@@ -47,7 +51,6 @@ class RouteSuggestionsViewController: UIViewController{
         addActions()
         addEvents()
         optionsDataSource.applyInitialSnapshot()
-
     }
 
     private func addEvents(){
@@ -56,7 +59,6 @@ class RouteSuggestionsViewController: UIViewController{
             case .backButton:
                 self?.viewModel?.handle(.backButtonTapped)
             }
-
         }
     }
 
@@ -66,8 +68,8 @@ class RouteSuggestionsViewController: UIViewController{
             case .content(let flights):
                 self?.tableContainerView.configure(with: flights)
             case .setWay(let way):
-                self?.searchContainerView.setCityTo(text: way.cityTo ?? "bybuy")
-                self?.searchContainerView.setCityFrom(text: way.cityFrom ?? "jjjjj")
+                self?.searchContainerView.setCityTo(text: way.cityTo ?? "")
+                self?.searchContainerView.setCityFrom(text: way.cityFrom ?? "")
             }
 
         }
@@ -119,13 +121,15 @@ class RouteSuggestionsViewController: UIViewController{
     }
 }
 
+//  MARK: - UICollectionViewDelegate UICollectionViewDelegateFlowLayout
+
 extension RouteSuggestionsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let desiredWidth = {
             if let item = optionsDataSource.getItem(at: indexPath) {
                 switch item {
-                case .backButton(_, _):
+                case .returnButton(_, _):
                     return 105
                 case .date(_, _):
                     return 88
@@ -146,11 +150,11 @@ extension RouteSuggestionsViewController: UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let item = optionsDataSource.getItem(at: indexPath) {
             switch item {
-            case .backButton(let title):
-                print("Back button selected: \(title)")
-            case .date(let date):
+            case .returnButton(let image, let title):
+                print("Return button selected: \(title)")
+            case .date(let date, let day):
                 print("Date selected: \(date)")
-            case .info(let info):
+            case .info(let image, let info ):
                 print("Info selected: \(info)")
             case .filter(_, _):
                 break

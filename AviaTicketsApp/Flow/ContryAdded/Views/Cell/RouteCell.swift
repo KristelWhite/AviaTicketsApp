@@ -16,6 +16,7 @@ class RouteCell: UITableViewCell {
         view.layer.masksToBounds = true
         return view
     }()
+
     private let priceImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.image = Asset.acsessory.image
@@ -24,12 +25,14 @@ class RouteCell: UITableViewCell {
         imageView.layer.masksToBounds = true
         return imageView
     }()
+
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = Palette.white.color
         label.font = Typography.title4.font
         return label
     }()
+
     private let timeLabel: UILabel = {
         let label = UILabel()
         label.textColor = Palette.white.color
@@ -43,6 +46,7 @@ class RouteCell: UITableViewCell {
         label.font = Typography.title4.font
         return label
     }()
+
     private let vStack: UIStackView = {
         let verticalStackView = UIStackView()
         verticalStackView.axis = .vertical
@@ -52,6 +56,7 @@ class RouteCell: UITableViewCell {
         return verticalStackView
 
     }()
+
     private let hStack: UIStackView = {
         let hStackView = UIStackView()
         hStackView.axis = .horizontal
@@ -60,6 +65,7 @@ class RouteCell: UITableViewCell {
         return hStackView
 
     }()
+
     private let priceHStack: UIStackView = {
         let hStackView = UIStackView()
         hStackView.axis = .horizontal
@@ -69,6 +75,8 @@ class RouteCell: UITableViewCell {
         return hStackView
 
     }()
+
+//    MARK: - init
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -80,9 +88,21 @@ class RouteCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    //    MARK: - public methods
+
+    func configure(with route: RouteProps) {
+        colorView.backgroundColor = route.color
+        nameLabel.text = route.name
+        timeLabel.text = route.time
+        priceLabel.text = route.price
+    }
+
+    //    MARK: - private methods
+
     private func setup() {
-        contentView.backgroundColor = UIColor.clear // Прозрачный фон для содержимого ячейки
-        backgroundColor = UIColor.clear // Прозрачный фон самой ячейкиё
+        contentView.backgroundColor = UIColor.clear
+        backgroundColor = UIColor.clear
+
         selectionStyle = .none
     }
 
@@ -108,13 +128,5 @@ class RouteCell: UITableViewCell {
             make.bottom.equalToSuperview().inset(10)
             make.trailing.equalToSuperview()
         }
-
-    }
-
-    func configure(with route: RouteProps) {
-        colorView.backgroundColor = route.color
-        nameLabel.text = route.name
-        timeLabel.text = route.time
-        priceLabel.text = route.price
     }
 }

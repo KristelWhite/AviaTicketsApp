@@ -16,6 +16,21 @@ class DestinationDataSource {
         configureDataSource()
     }
 
+    //  MARK: - public methods
+    
+    func applySnapshot(destinations: [DestinationProps]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, DestinationProps>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(destinations, toSection: .main)
+        dataSource.apply(snapshot, animatingDifferences: true)
+    }
+
+    func getItem(at indexPath: IndexPath) -> DestinationProps? {
+            return dataSource.itemIdentifier(for: indexPath)
+        }
+
+    //  MARK: - private methods
+
     private func setup() {
         let cellReuseIdentifier = DestinationCell.reuseIdentifier
         tableView.register(DestinationCell.self, forCellReuseIdentifier: cellReuseIdentifier)
@@ -32,18 +47,6 @@ class DestinationDataSource {
             return cell
         }
     }
-
-    func applySnapshot(destinations: [DestinationProps]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, DestinationProps>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(destinations, toSection: .main)
-        dataSource.apply(snapshot, animatingDifferences: true)
-    }
-
-    func getItem(at indexPath: IndexPath) -> DestinationProps? {
-            return dataSource.itemIdentifier(for: indexPath)
-        }
-
 }
 
 extension DestinationDataSource {

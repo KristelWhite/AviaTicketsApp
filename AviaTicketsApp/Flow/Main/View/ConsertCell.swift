@@ -53,8 +53,6 @@ class ConcertCell: UICollectionViewCell {
 
     }()
 
-
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -97,7 +95,7 @@ class ConcertCell: UICollectionViewCell {
         }
     }
 
-    func configure(with concert: Concert) {
+    func configure(with concert: ConcertProps) {
         imageView.image = concert.image
         artistLabel.text = concert.artist
         cityLabel.text = concert.city

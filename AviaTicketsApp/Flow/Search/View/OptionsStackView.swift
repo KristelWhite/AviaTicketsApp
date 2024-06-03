@@ -79,6 +79,8 @@ class OptionsStackView: UIView {
         return horizontalStackView
     }()
 
+    //  MARK: - Init
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -88,6 +90,8 @@ class OptionsStackView: UIView {
         super.init(coder: coder)
         setupView()
     }
+
+    //  MARK: - private methods
 
     private func setupView() {
         addSubview(stackView)

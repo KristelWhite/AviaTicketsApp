@@ -91,14 +91,3 @@ class AviaCoordinator: Coordinator {
     }
 
 }
-class CommingSoonCoordinator: Coordinator {
-    var navigationController: UINavigationController
-
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-
-    func start() {
-        navigationController.pushViewController(PlugViewController(), animated: false)
-    }
-}

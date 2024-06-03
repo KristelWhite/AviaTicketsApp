@@ -52,10 +52,6 @@ struct Arrival: Decodable {
 //        return decoder
 //    }()
 //}
-
-//var rubleSymbol: String {
-//    return "₽"
-//}
 //
 //var flightDuration: String {
 //    let departureDate = departure.date

@@ -8,8 +8,9 @@
 import UIKit
 
 class OptionsDataSource {
+
     enum Item: Hashable {
-        case backButton(UIImage, String)
+        case returnButton(UIImage, String) 
         case date(String, String)
         case info(UIImage, String)
         case filter(UIImage, String)
@@ -24,27 +25,8 @@ class OptionsDataSource {
         configureDataSource()
     }
 
-    private func setup() {
-        collectionView.register(OptionCell.self, forCellWithReuseIdentifier: OptionCell.reuseIdentifier)
-        collectionView.register(DateCell.self, forCellWithReuseIdentifier: DateCell.reuseIdentifier)
-    }
-
-    private func configureDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView) {
-            (collectionView, indexPath, item) -> UICollectionViewCell in
-            switch item {
-            case .backButton(let image, let title), .filter(let image, let title), .info(let image, let title):
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OptionCell.reuseIdentifier, for: indexPath) as? OptionCell else { return UICollectionViewCell()}
-                cell.configure(image: image, title: title)
-                return cell
-            case .date(let date, let day):
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DateCell.reuseIdentifier, for: indexPath) as? DateCell else { return UICollectionViewCell()}
-                cell.configure(date: date, day: day)
-                return cell
-            }
-        }
-    }
-
+    //  MARK: - public
+    
     func applySnapshot(options: [Item]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections([.main])
@@ -56,7 +38,7 @@ class OptionsDataSource {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections([.main])
         snapshot.appendItems([
-            .backButton(Asset.plus.image, "обратно"),
+            .returnButton(Asset.plus.image, "обратно"),
             .date(Date().formattedDate(), Date().weekdayShortName()),
             .info(Asset.profileSmall.image, "1,эконом"),
             .filter(Asset.filters.image, "фильтр")
@@ -68,6 +50,28 @@ class OptionsDataSource {
         return dataSource.itemIdentifier(for: indexPath)
     }
 
+    //  MARK: - private
+
+    private func setup() {
+        collectionView.register(OptionCell.self, forCellWithReuseIdentifier: OptionCell.reuseIdentifier)
+        collectionView.register(DateCell.self, forCellWithReuseIdentifier: DateCell.reuseIdentifier)
+    }
+
+    private func configureDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView) {
+            (collectionView, indexPath, item) -> UICollectionViewCell in
+            switch item {
+            case .returnButton(let image, let title), .filter(let image, let title), .info(let image, let title):
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OptionCell.reuseIdentifier, for: indexPath) as? OptionCell else { return UICollectionViewCell()}
+                cell.configure(image: image, title: title)
+                return cell
+            case .date(let date, let day):
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DateCell.reuseIdentifier, for: indexPath) as? DateCell else { return UICollectionViewCell()}
+                cell.configure(date: date, day: day)
+                return cell
+            }
+        }
+    }
 }
 
 extension OptionsDataSource {

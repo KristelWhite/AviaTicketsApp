@@ -17,18 +17,21 @@ class DestinationCell: UITableViewCell {
         imageView.layer.masksToBounds = true
         return imageView
     }()
+
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = Palette.white.color
         label.font = Typography.title3.font
         return label
     }()
+
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.textColor = Palette.grey5.color
         label.font = Typography.text2.font
         return label
     }()
+
     private let vStack: UIStackView = {
         let verticalStackView = UIStackView()
         verticalStackView.axis = .vertical
@@ -49,9 +52,19 @@ class DestinationCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    //  MARK: - prublic methods
+
+    func configure(with destination: DestinationProps) {
+        destinationImageView.image = destination.image
+        nameLabel.text = destination.name
+        descriptionLabel.text = destination.description
+    }
+
+    //  MARK: - private methods
+
     private func setup() {
-        contentView.backgroundColor = UIColor.clear // Прозрачный фон для содержимого ячейки
-        backgroundColor = UIColor.clear // Прозрачный фон самой ячейкиё
+        contentView.backgroundColor = UIColor.clear
+        backgroundColor = UIColor.clear
         selectionStyle = .none 
     }
 
@@ -73,15 +86,5 @@ class DestinationCell: UITableViewCell {
             make.trailing.equalToSuperview()
         }
 
-    }
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: false)
-//    }
-
-    func configure(with destination: DestinationProps) {
-        destinationImageView.image = destination.image
-        nameLabel.text = destination.name
-        descriptionLabel.text = destination.description
     }
 }

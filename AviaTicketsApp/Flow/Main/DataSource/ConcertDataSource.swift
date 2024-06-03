@@ -9,7 +9,7 @@ import UIKit
 
 class ConcertDataSource {
     private var collectionView: UICollectionView
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Concert>!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, ConcertProps>!
 
     init(collectionView: UICollectionView) {
         print("initdatasource")
@@ -24,8 +24,8 @@ class ConcertDataSource {
     }
 
     private func configureDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Concert>(collectionView: collectionView) {
-            (collectionView: UICollectionView, indexPath: IndexPath, concert: Concert) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<Section, ConcertProps>(collectionView: collectionView) {
+            (collectionView: UICollectionView, indexPath: IndexPath, concert: ConcertProps) -> UICollectionViewCell? in
             let cellReuseIdentifier = ConcertCell.reuseIdentifier
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? ConcertCell else {
                 return nil
@@ -33,11 +33,10 @@ class ConcertDataSource {
             cell.configure(with: concert)
             return cell
         }
-        print("DataSource configured")
     }
 
-    func applySnapshot(concerts: [Concert]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Concert>()
+    func applySnapshot(concerts: [ConcertProps]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, ConcertProps>()
         snapshot.appendSections([.main])
         snapshot.appendItems(concerts, toSection: .main)
         dataSource.apply(snapshot, animatingDifferences: true)

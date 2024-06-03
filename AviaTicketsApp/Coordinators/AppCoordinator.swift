@@ -13,7 +13,6 @@ protocol Coordinator {
     func start()
 }
 
-
 class AppCoordinator {
 
     static let shared = AppCoordinator()

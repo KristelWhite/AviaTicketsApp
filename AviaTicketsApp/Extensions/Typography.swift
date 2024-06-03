@@ -28,7 +28,6 @@ enum Typography {
             return UIFont.systemFont(ofSize: 16.0, weight: .semibold)
         case .title4:
             return UIFont.italicSystemFont(ofSize: 14)
-//            return UIFont.systemFont(ofSize: 14.0, weight: .medium)
         case .text1:
             return UIFont.systemFont(ofSize: 16.0, weight: .regular)
         case .text2:

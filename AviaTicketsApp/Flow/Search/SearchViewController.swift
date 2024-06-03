@@ -15,13 +15,17 @@ class SearchViewController: UIViewController {
     private let optionsStackView = OptionsStackView()
     private let searchContainerView = SearchContainerView()
     private let tableContainerView = PlaceTableContainerView()
-
    
     override func viewDidLoad() {
         super.viewDidLoad()
         setEvents()
         setupUI()
+        configureViewModel()
+    }
 
+    //  MARK: - private methods
+
+    private func configureViewModel(){
         viewModel?.onOutput = { [weak self] output in
             switch output {
             case .content(let destinations):
@@ -35,7 +39,7 @@ class SearchViewController: UIViewController {
 
     }
 
-    func setEvents() {
+    private func setEvents() {
         tableContainerView.onEvent = { [weak self] event in
             switch event {
             case .selectCity(let city):
@@ -63,7 +67,7 @@ class SearchViewController: UIViewController {
 
     }
 
-    func setupUI() {
+    private func setupUI() {
         view.backgroundColor = Palette.grey2.color
 
         view.addSubview(searchContainerView)

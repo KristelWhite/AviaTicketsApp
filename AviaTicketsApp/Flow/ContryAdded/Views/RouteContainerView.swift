@@ -35,6 +35,8 @@ class RouteTableContainerView: UIView {
         return label
     }()
 
+    //  MARK: - init
+
     init() {
         super.init(frame: .zero)
         setup()
@@ -47,14 +49,22 @@ class RouteTableContainerView: UIView {
         setupConstraints()
     }
 
-    func setup() {
+    //  MARK: - public
+
+    func configure(with props: [RouteProps]) {
+        routeDataSource.applySnapshot(routes: props)
+    }
+
+    //  MARK: - private
+
+    private func setup() {
         self.layer.cornerRadius = 16
         self.layer.masksToBounds = true
         self.backgroundColor = Palette.grey1.color
         tableView.delegate = self
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         self.addSubview(title)
         self.addSubview(tableView)
 
@@ -66,11 +76,9 @@ class RouteTableContainerView: UIView {
             make.top.equalTo(title.snp.bottom)
         }
     }
-
-    func configure(with props: [RouteProps]) {
-        routeDataSource.applySnapshot(routes: props)
-    }
 }
+
+//  MARK: - UITableViewDelegate
 
 extension RouteTableContainerView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
