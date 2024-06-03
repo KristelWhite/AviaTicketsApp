@@ -23,6 +23,8 @@ class AviaCoordinator: Coordinator {
             }
         }
         vc.viewModel = viewModel
+        
+        navigationController.isNavigationBarHidden = true
         navigationController.pushViewController(vc, animated: false)
     }
 

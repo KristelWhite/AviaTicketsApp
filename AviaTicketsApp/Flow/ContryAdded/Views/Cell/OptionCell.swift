@@ -1,5 +1,5 @@
 //
-//  DateCell.swift
+//  ReturnTicketCell.swift
 //  AviaTicketsApp
 //
 //  Created by Кристина Пастухова on 03.06.2024.
@@ -7,21 +7,21 @@
 
 import UIKit
 
-class DateCell: UICollectionViewCell {
+class OptionCell: UICollectionViewCell {
 
-    static let reuseIdentifier = "dateCell"
+    static let reuseIdentifier = "optionCell"
 
-    private let dateLabel: UILabel = {
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.tintColor = Palette.white.color
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = Typography.title4.font
         label.textColor = Palette.white.color
-        return label
-    }()
-
-    private let dayLabel: UILabel = {
-        let label = UILabel()
-        label.font = Typography.title4.font
-        label.textColor = Palette.grey5.color
         return label
     }()
 
@@ -30,7 +30,7 @@ class DateCell: UICollectionViewCell {
         horizontalStackView.axis = .horizontal
         horizontalStackView.distribution = .fill
         horizontalStackView.alignment = .fill
-        horizontalStackView.spacing = 0
+        horizontalStackView.spacing = 8
         return horizontalStackView
     }()
 
@@ -44,9 +44,9 @@ class DateCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(date: String, day: String){
-        dateLabel.text = date
-        dayLabel.text = day
+    func configure(image: UIImage, title: String){
+        imageView.image = image
+        titleLabel.text = title
     }
 
     //MARK: - private metods
@@ -57,14 +57,16 @@ class DateCell: UICollectionViewCell {
     }
 
     private func setupConstraints(){
-        hStack.addArrangedSubview(dateLabel)
-        hStack.addArrangedSubview(dayLabel)
+        hStack.addArrangedSubview(imageView)
+        hStack.addArrangedSubview(titleLabel)
         contentView.addSubview(hStack)
 
         hStack.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.centerX.equalToSuperview()
         }
+        imageView.snp.makeConstraints { make in
+            make.height.width.equalTo(16)
+        }
     }
 }
-

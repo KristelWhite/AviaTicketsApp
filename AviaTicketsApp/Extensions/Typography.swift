@@ -16,6 +16,7 @@ enum Typography {
     case text2
     case buttonText
     case tabText
+    case italicButtonText
 
     var font: UIFont {
         switch self {
@@ -34,6 +35,8 @@ enum Typography {
             return UIFont.systemFont(ofSize: 14.0, weight: .regular)
         case .buttonText:
             return UIFont.systemFont(ofSize: 16.0, weight: .semibold)
+        case .italicButtonText:
+            return UIFont.italicSystemFont(ofSize: 16.0)
         case .tabText:
             return UIFont.systemFont(ofSize: 10.0, weight: .regular)
         }

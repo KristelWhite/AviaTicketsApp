@@ -50,7 +50,7 @@ class RouteTableContainerView: UIView {
     func setup() {
         self.layer.cornerRadius = 16
         self.layer.masksToBounds = true
-        self.backgroundColor = Palette.grey3.color
+        self.backgroundColor = Palette.grey1.color
         tableView.delegate = self
     }
 

@@ -13,7 +13,7 @@ enum FligthColor {
         case 1:
             return Palette.red.color
         case 10:
-            return Palette.blue.color
+            return Palette.priceBlue.color
         case 30:
             return Palette.white.color
         default:

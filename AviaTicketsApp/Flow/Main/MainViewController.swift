@@ -103,7 +103,7 @@ class MainViewController: UIViewController {
         layout.itemSize = CGSize(width: 132, height: 213)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
-        collectionView.register(ConcertCell.self, forCellWithReuseIdentifier: ConcertCell.reuseIdentifier)
+//        collectionView.register(ConcertCell.self, forCellWithReuseIdentifier: ConcertCell.reuseIdentifier)
         return collectionView
     }()
 

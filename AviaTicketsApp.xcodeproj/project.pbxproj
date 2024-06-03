@@ -18,10 +18,8 @@
 		637500122C0CB7A500EC1E36 /* RouteContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637500112C0CB7A500EC1E36 /* RouteContainerView.swift */; };
 		637500142C0D05C200EC1E36 /* RouteProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637500132C0D05C200EC1E36 /* RouteProps.swift */; };
 		637500172C0D065D00EC1E36 /* RouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637500162C0D065D00EC1E36 /* RouteCell.swift */; };
-		637500192C0D8EB700EC1E36 /* ReturnTicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637500182C0D8EB600EC1E36 /* ReturnTicketCell.swift */; };
+		637500192C0D8EB700EC1E36 /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637500182C0D8EB600EC1E36 /* OptionCell.swift */; };
 		6375001B2C0D8ED700EC1E36 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375001A2C0D8ED700EC1E36 /* DateCell.swift */; };
-		6375001D2C0D8F1F00EC1E36 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375001C2C0D8F1F00EC1E36 /* InfoCell.swift */; };
-		6375001F2C0D8F3A00EC1E36 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375001E2C0D8F3A00EC1E36 /* FilterCell.swift */; };
 		6375FF932C088D0C00EC1E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FF922C088D0C00EC1E36 /* AppDelegate.swift */; };
 		6375FF952C088D0C00EC1E36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FF942C088D0C00EC1E36 /* SceneDelegate.swift */; };
 		6375FF972C088D0C00EC1E36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FF962C088D0C00EC1E36 /* ViewController.swift */; };
@@ -61,6 +59,7 @@
 		6375FFFA2C0C746100EC1E36 /* SearchContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFF92C0C746100EC1E36 /* SearchContainerView.swift */; };
 		6375FFFC2C0C7A7800EC1E36 /* DestinationProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFFB2C0C7A7800EC1E36 /* DestinationProps.swift */; };
 		6375FFFE2C0C7AA100EC1E36 /* DestinationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFFD2C0C7AA100EC1E36 /* DestinationTableViewCell.swift */; };
+		6389A3C52C0DDA480021BFAE /* Data extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389A3C42C0DDA480021BFAE /* Data extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,10 +72,8 @@
 		637500112C0CB7A500EC1E36 /* RouteContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteContainerView.swift; sourceTree = "<group>"; };
 		637500132C0D05C200EC1E36 /* RouteProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteProps.swift; sourceTree = "<group>"; };
 		637500162C0D065D00EC1E36 /* RouteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCell.swift; sourceTree = "<group>"; };
-		637500182C0D8EB600EC1E36 /* ReturnTicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnTicketCell.swift; sourceTree = "<group>"; };
+		637500182C0D8EB600EC1E36 /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
 		6375001A2C0D8ED700EC1E36 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
-		6375001C2C0D8F1F00EC1E36 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
-		6375001E2C0D8F3A00EC1E36 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		6375FF8F2C088D0C00EC1E36 /* AviaTicketsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviaTicketsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6375FF922C088D0C00EC1E36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6375FF942C088D0C00EC1E36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +116,7 @@
 		6375FFFB2C0C7A7800EC1E36 /* DestinationProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationProps.swift; sourceTree = "<group>"; };
 		6375FFFD2C0C7AA100EC1E36 /* DestinationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationTableViewCell.swift; sourceTree = "<group>"; };
 		6375FFFF2C0C8C8500EC1E36 /* PlaceTableContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableContainerView.swift; sourceTree = "<group>"; };
+		6389A3C42C0DDA480021BFAE /* Data extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data extension.swift"; sourceTree = "<group>"; };
 		9450322BD7A53063FFB9D3B9 /* Pods-AviaTicketsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviaTicketsApp.debug.xcconfig"; path = "Target Support Files/Pods-AviaTicketsApp/Pods-AviaTicketsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C483D0D017FB00C759DC5473 /* Pods_AviaTicketsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AviaTicketsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E857FA6C4ACA5DAD79DC13A2 /* Pods-AviaTicketsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviaTicketsApp.release.xcconfig"; path = "Target Support Files/Pods-AviaTicketsApp/Pods-AviaTicketsApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,10 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				637500162C0D065D00EC1E36 /* RouteCell.swift */,
-				637500182C0D8EB600EC1E36 /* ReturnTicketCell.swift */,
+				637500182C0D8EB600EC1E36 /* OptionCell.swift */,
 				6375001A2C0D8ED700EC1E36 /* DateCell.swift */,
-				6375001C2C0D8F1F00EC1E36 /* InfoCell.swift */,
-				6375001E2C0D8F3A00EC1E36 /* FilterCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -352,6 +348,7 @@
 				6375FFDB2C0B219C00EC1E36 /* Shadows.swift */,
 				6375FFDD2C0B265C00EC1E36 /* Borders.swift */,
 				6375FFF32C0C659E00EC1E36 /* UIControl extension.swift */,
+				6389A3C42C0DDA480021BFAE /* Data extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -554,7 +551,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6375FFF42C0C659E00EC1E36 /* UIControl extension.swift in Sources */,
-				6375001F2C0D8F3A00EC1E36 /* FilterCell.swift in Sources */,
 				6375FFE72C0B4FA800EC1E36 /* FlightsResponce.swift in Sources */,
 				6375FFD82C0A384C00EC1E36 /* ColorPalette.swift in Sources */,
 				637500002C0C8C8500EC1E36 /* PlaceTableContainerView.swift in Sources */,
@@ -577,14 +573,14 @@
 				6375FFAD2C08921100EC1E36 /* TabBarModel.swift in Sources */,
 				6375FFF82C0C731B00EC1E36 /* OptionView.swift in Sources */,
 				637500102C0CB6C300EC1E36 /* RouteSearchContainerView.swift in Sources */,
-				637500192C0D8EB700EC1E36 /* ReturnTicketCell.swift in Sources */,
+				637500192C0D8EB700EC1E36 /* OptionCell.swift in Sources */,
 				6375FFDC2C0B219C00EC1E36 /* Shadows.swift in Sources */,
 				637500142C0D05C200EC1E36 /* RouteProps.swift in Sources */,
 				6375FFEA2C0B78C800EC1E36 /* SearchViewController.swift in Sources */,
-				6375001D2C0D8F1F00EC1E36 /* InfoCell.swift in Sources */,
 				6375FFB12C08955A00EC1E36 /* MainViewController.swift in Sources */,
 				637500042C0CB48B00EC1E36 /* RouteSuggestionsViewController.swift in Sources */,
 				6375000C2C0CB68B00EC1E36 /* RouteDataSource.swift in Sources */,
+				6389A3C52C0DDA480021BFAE /* Data extension.swift in Sources */,
 				6375FFE52C0B4F9900EC1E36 /* TicketsResponse.swift in Sources */,
 				6375001B2C0D8ED700EC1E36 /* DateCell.swift in Sources */,
 				6375FFEC2C0B78E000EC1E36 /* SearchViewModel.swift in Sources */,

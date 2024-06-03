@@ -12,17 +12,26 @@ class RouteSuggestionsViewController: UIViewController{
     var viewModel: RouteSuggestionsViewModel?
 
     private let searchContainerView = RouteSearchContainerView()
-    private var optionCollectionView: UICollectionView!
     private let tableContainerView = RouteTableContainerView()
-//    private lazy var optionsDataSource = OptionsDataSource(collectionView: optionCollectionView)
+
+    private lazy var optionsDataSource = OptionsDataSource(collectionView: optionCollectionView)
+    private let optionCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+//        layout.itemSize.height = 33
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+//        collectionView.register(ConcertCell.self, forCellWithReuseIdentifier: ConcertCell.reuseIdentifier)
+        return collectionView
+    }()
 
     let showAllTicketsButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Посмотреть все билеты", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor(red: 0.0, green: 0.48, blue: 1.0, alpha: 1.0)
-        button.layer.cornerRadius = 10
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.setTitleColor(Palette.white.color, for: .normal)
+        button.backgroundColor = Palette.priceBlue.color
+        button.layer.cornerRadius = 8
+        button.titleLabel?.font = Typography.italicButtonText.font
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -41,10 +50,10 @@ class RouteSuggestionsViewController: UIViewController{
 
         }
         viewModel?.handle(.loadData)
+        optionsDataSource.applyInitialSnapshot()
     }
 
     func configureCollectionView(){
-        optionCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
         optionCollectionView.delegate = self
     }
     func createLayout() -> UICollectionViewLayout {
@@ -58,7 +67,7 @@ class RouteSuggestionsViewController: UIViewController{
     }
 
     func setupUI() {
-        view.backgroundColor = Palette.grey2.color
+        view.backgroundColor = Palette.black.color
 
         view.addSubview(searchContainerView)
         view.addSubview(optionCollectionView)
@@ -94,18 +103,43 @@ class RouteSuggestionsViewController: UIViewController{
         }
     }
 
-extension RouteSuggestionsViewController: UICollectionViewDelegate  {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if let item = optionsDataSource.getItem(at: indexPath) {
-//            switch item {
-//            case .backButton(let title):
-//                print("Back button selected: \(title)")
-//            case .date(let date):
-//                print("Date selected: \(date)")
-//            case .info(let info):
-//                print("Info selected: \(info)")
-//            }
-//        }
-//    }
+extension RouteSuggestionsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let desiredWidth = {
+            if let item = optionsDataSource.getItem(at: indexPath) {
+                switch item {
+                case .backButton(_, _):
+                    return 105
+                case .date(_, _):
+                    return 88
+                case .info(_, _):
+                    return 104
+                case .filter(_, _):
+                    return 115
+                }
+            }
+            return 105
+        }()
+
+        let height = 33
+        return CGSize(width: desiredWidth, height: height)
+    }
+
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let item = optionsDataSource.getItem(at: indexPath) {
+            switch item {
+            case .backButton(let title):
+                print("Back button selected: \(title)")
+            case .date(let date):
+                print("Date selected: \(date)")
+            case .info(let info):
+                print("Info selected: \(info)")
+            case .filter(_, _):
+                break
+            }
+        }
+    }
 }
 
