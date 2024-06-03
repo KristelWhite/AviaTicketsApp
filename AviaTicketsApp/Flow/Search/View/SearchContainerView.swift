@@ -18,6 +18,13 @@ class SearchContainerView: UIView {
     var cityFromTextField = UITextField()
     var cityToTextField = UITextField()
 
+    private let clearButton: UIButton = {
+        let clearButton = UIButton(type: .custom)
+        clearButton.setTitleColor(Palette.grey6.color, for: .normal)
+        clearButton.setImage(Asset.cansel.image, for: .normal)
+        return clearButton
+    }()
+    
     init() {
         super.init(frame: .zero)
         setup()
@@ -38,8 +45,19 @@ class SearchContainerView: UIView {
         cityFromTextField.delegate = self
         setupView()
         addSubviews()
-
+        addClearAction()
     }
+
+    private func addClearAction(){
+        clearButton.addTarget(self, action: #selector(clearTextField), for: .touchUpInside)
+        cityToTextField.rightView = clearButton
+        cityToTextField.rightViewMode = .always
+    }
+
+    @objc func clearTextField() {
+        cityToTextField.text = ""
+    }
+
 
     func setCityFrom(text: String) {
         self.cityFromTextField.text = text

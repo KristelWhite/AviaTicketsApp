@@ -58,6 +58,13 @@ class RouteSearchContainerView: UIView {
         return button
     }()
 
+    private let clearButton: UIButton = {
+        let clearButton = UIButton(type: .custom)
+        clearButton.setTitleColor(Palette.grey6.color, for: .normal)
+        clearButton.setImage(Asset.cansel.image, for: .normal)
+        return clearButton
+    }()
+
 
     init() {
         super.init(frame: .zero)
@@ -67,7 +74,7 @@ class RouteSearchContainerView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
-        
+
     }
     func setCityFrom(text: String) {
         self.cityFromTextField.text = text
@@ -86,6 +93,13 @@ class RouteSearchContainerView: UIView {
     func addActions() {
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         exchangeButton.addTarget(self, action: #selector(exchangeButtonTapped), for: .touchUpInside)
+        clearButton.addTarget(self, action: #selector(clearTextField), for: .touchUpInside)
+        cityToTextField.rightView = clearButton
+        cityToTextField.rightViewMode = .always
+    }
+
+    @objc func clearTextField() {
+        cityToTextField.text = ""
     }
 
     private func setupView(){

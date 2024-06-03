@@ -118,6 +118,13 @@ class MainViewController: UIViewController {
 
     }()
 
+    private let clearButton: UIButton = {
+        let clearButton = UIButton(type: .custom)
+        clearButton.setTitleColor(Palette.grey6.color, for: .normal)
+        clearButton.setImage(Asset.cansel.image, for: .normal)
+        return clearButton
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Palette.black.color
@@ -131,16 +138,22 @@ class MainViewController: UIViewController {
         }
         viewModel?.handle(.loadData)
 
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(textFieldTapped))
-        cityToTextField.isUserInteractionEnabled = true
-        cityToTextField.addGestureRecognizer(tapGesture)
+        addActions()
     }
 
-    private func addAction() {
+    private func addActions() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(textFieldTapped))
         cityToTextField.isUserInteractionEnabled = true
         cityToTextField.addGestureRecognizer(tapGesture)
+
+        clearButton.addTarget(self, action: #selector(clearTextField), for: .touchUpInside)
+        cityFromTextField.rightView = clearButton
+        cityFromTextField.rightViewMode = .whileEditing
     }
+
+    @objc func clearTextField() {
+        cityFromTextField.text = ""
+       }
 
     @objc func textFieldTapped() {
         viewModel?.handle(.enterCityFrom(cityFromTextField.text ?? ""))
