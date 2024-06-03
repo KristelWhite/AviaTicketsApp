@@ -134,9 +134,12 @@ class MainViewController: UIViewController {
             switch output {
             case .content(let concerts):
                 self?.concertDataSource.applySnapshot(concerts: concerts)
+            case .setCityFrom(let city):
+                self?.cityFromTextField.text = city
             }
         }
         viewModel?.handle(.loadData)
+        viewModel?.handle(.setCityFrom)
 
         addActions()
     }

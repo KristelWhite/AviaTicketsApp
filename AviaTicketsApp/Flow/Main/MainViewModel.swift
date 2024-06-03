@@ -12,11 +12,13 @@ class MainViewModel {
 
     enum Output {
         case content([Concert])
+        case setCityFrom(String)
     }
 
     enum Input {
         case loadData
         case enterCityFrom(String)
+        case setCityFrom
     }
 
     enum Event {
@@ -28,6 +30,7 @@ class MainViewModel {
 
     let service = RequestManager()
     private var cancellables = Set<AnyCancellable>()
+    private let defaults = UserDefaults.standard
     //
     private var flightSearchModel: FlightModel?
     var cityFrom: String? {
@@ -44,6 +47,20 @@ class MainViewModel {
             loadData()
         case .enterCityFrom(let city):
             onEvent?(.enterCityFrom(city))
+            safeInUserDefaults(value: city)
+        case .setCityFrom:
+            onOutput?(.setCityFrom(getFromUserDefaults()))
+        }
+    }
+    func safeInUserDefaults(value: String){
+        defaults.set(value, forKey: "cityFrom")
+    }
+
+    func getFromUserDefaults() -> String {
+        if let city = UserDefaults.standard.string(forKey: "cityFrom") {
+            return city
+        } else {
+            return ""
         }
     }
 
