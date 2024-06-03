@@ -37,6 +37,7 @@ class RouteSuggestionsViewController: UIViewController{
         super.viewDidLoad()
         setupConstraints()
         setup()
+        viewModel?.handle(.setWay)
     }
 
 
@@ -55,6 +56,7 @@ class RouteSuggestionsViewController: UIViewController{
             case .backButton:
                 self?.viewModel?.handle(.backButtonTapped)
             }
+
         }
     }
 
@@ -63,6 +65,9 @@ class RouteSuggestionsViewController: UIViewController{
             switch output {
             case .content(let flights):
                 self?.tableContainerView.configure(with: flights)
+            case .setWay(let way):
+                self?.searchContainerView.setCityTo(text: way.cityTo ?? "bybuy")
+                self?.searchContainerView.setCityFrom(text: way.cityFrom ?? "jjjjj")
             }
 
         }

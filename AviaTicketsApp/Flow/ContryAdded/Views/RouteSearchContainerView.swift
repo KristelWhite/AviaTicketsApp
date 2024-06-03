@@ -67,6 +67,7 @@ class RouteSearchContainerView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
+        
     }
     func setCityFrom(text: String) {
         self.cityFromTextField.text = text

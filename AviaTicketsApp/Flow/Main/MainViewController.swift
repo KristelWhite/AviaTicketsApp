@@ -11,12 +11,6 @@ import Combine
 
 class MainViewController: UIViewController {
 
-//    enum Event {
-//        case loadData
-//    }
-//
-//    var onEvent: ((Event) -> Void)?
-
     var viewModel: MainViewModel?
     private lazy var concertDataSource = ConcertDataSource(collectionView: collectionView)
 
@@ -28,7 +22,6 @@ class MainViewController: UIViewController {
         label.font = Typography.title1.font
         label.textColor = Palette.grey7.color
         Shadow.base.apply(to: label)
-//        Border.base.apply(to: label, with: text)
         return label
     }()
 
@@ -103,7 +96,6 @@ class MainViewController: UIViewController {
         layout.itemSize = CGSize(width: 132, height: 213)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
-//        collectionView.register(ConcertCell.self, forCellWithReuseIdentifier: ConcertCell.reuseIdentifier)
         return collectionView
     }()
 
@@ -138,20 +130,20 @@ class MainViewController: UIViewController {
             }
         }
         viewModel?.handle(.loadData)
-        //
-        viewModel?.handle(.enterCityFrom("jnkrf"))
-
-        //обработка касания textfield
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(textFieldTapped))
         cityToTextField.isUserInteractionEnabled = true
         cityToTextField.addGestureRecognizer(tapGesture)
-
-
     }
+
+    private func addAction() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(textFieldTapped))
+        cityToTextField.isUserInteractionEnabled = true
+        cityToTextField.addGestureRecognizer(tapGesture)
+    }
+
     @objc func textFieldTapped() {
         viewModel?.handle(.enterCityFrom(cityFromTextField.text ?? ""))
-            print("Текстовое поле было нажато")
         cityToTextField.becomeFirstResponder()
         }
 
@@ -189,14 +181,6 @@ class MainViewController: UIViewController {
             make.leading.equalToSuperview().inset(8)
         }
 
-//        cityFromTextField.snp.makeConstraints { make in
-//            make.height.equalTo(21)
-//        }
-//
-//        cityToTextField.snp.makeConstraints { make in
-//            make.height.equalTo(21)
-//        }
-
         separaterView.snp.makeConstraints { make in
             make.height.equalTo(1)
         }
@@ -218,11 +202,3 @@ class MainViewController: UIViewController {
         }
     }
 }
-
-//extension UITextField {
-//    func setLeftPaddingPoints(_ amount: CGFloat) {
-//        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-//        self.leftView = paddingView
-//        self.leftViewMode = .always
-//    }
-//}

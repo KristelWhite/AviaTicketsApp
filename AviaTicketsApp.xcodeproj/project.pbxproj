@@ -22,7 +22,6 @@
 		6375001B2C0D8ED700EC1E36 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375001A2C0D8ED700EC1E36 /* DateCell.swift */; };
 		6375FF932C088D0C00EC1E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FF922C088D0C00EC1E36 /* AppDelegate.swift */; };
 		6375FF952C088D0C00EC1E36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FF942C088D0C00EC1E36 /* SceneDelegate.swift */; };
-		6375FF972C088D0C00EC1E36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FF962C088D0C00EC1E36 /* ViewController.swift */; };
 		6375FF9A2C088D0C00EC1E36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6375FF982C088D0C00EC1E36 /* Main.storyboard */; };
 		6375FF9C2C088D1500EC1E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6375FF9B2C088D1500EC1E36 /* Assets.xcassets */; };
 		6375FF9F2C088D1500EC1E36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6375FF9D2C088D1500EC1E36 /* LaunchScreen.storyboard */; };
@@ -30,7 +29,7 @@
 		6375FFAF2C08922E00EC1E36 /* TabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFAE2C08922E00EC1E36 /* TabBarConfigurator.swift */; };
 		6375FFB12C08955A00EC1E36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFB02C08955A00EC1E36 /* MainViewController.swift */; };
 		6375FFB42C08959000EC1E36 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFB32C08959000EC1E36 /* MainViewModel.swift */; };
-		6375FFB62C0895B400EC1E36 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFB52C0895B400EC1E36 /* MainModel.swift */; };
+		6375FFB62C0895B400EC1E36 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFB52C0895B400EC1E36 /* FlightModel.swift */; };
 		6375FFB82C0895CB00EC1E36 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375FFB72C0895CB00EC1E36 /* AppCoordinator.swift */; };
 		6375FFBF2C089DBD00EC1E36 /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6375FFBE2C089DBC00EC1E36 /* Common.strings */; };
 		6375FFC12C089DCD00EC1E36 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6375FFC02C089DCD00EC1E36 /* Main.strings */; };
@@ -77,7 +76,6 @@
 		6375FF8F2C088D0C00EC1E36 /* AviaTicketsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviaTicketsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6375FF922C088D0C00EC1E36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6375FF942C088D0C00EC1E36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6375FF962C088D0C00EC1E36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6375FF992C088D0C00EC1E36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6375FF9B2C088D1500EC1E36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6375FF9E2C088D1500EC1E36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -86,7 +84,7 @@
 		6375FFAE2C08922E00EC1E36 /* TabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurator.swift; sourceTree = "<group>"; };
 		6375FFB02C08955A00EC1E36 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6375FFB32C08959000EC1E36 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		6375FFB52C0895B400EC1E36 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		6375FFB52C0895B400EC1E36 /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
 		6375FFB72C0895CB00EC1E36 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		6375FFBE2C089DBC00EC1E36 /* Common.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Common.strings; sourceTree = "<group>"; };
 		6375FFC02C089DCD00EC1E36 /* Main.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Main.strings; sourceTree = "<group>"; };
@@ -209,7 +207,6 @@
 				6375FFA92C0891D900EC1E36 /* Service */,
 				6375FFA72C088E9400EC1E36 /* Resources */,
 				6375FFA82C088F8A00EC1E36 /* Flow */,
-				6375FF962C088D0C00EC1E36 /* ViewController.swift */,
 			);
 			path = AviaTicketsApp;
 			sourceTree = "<group>";
@@ -283,7 +280,7 @@
 				6375FFC82C08BBD600EC1E36 /* DataSource */,
 				6375FFB02C08955A00EC1E36 /* MainViewController.swift */,
 				6375FFB32C08959000EC1E36 /* MainViewModel.swift */,
-				6375FFB52C0895B400EC1E36 /* MainModel.swift */,
+				6375FFB52C0895B400EC1E36 /* FlightModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -556,7 +553,7 @@
 				637500002C0C8C8500EC1E36 /* PlaceTableContainerView.swift in Sources */,
 				6375FFE22C0B4E2800EC1E36 /* ConcertListResponse.swift in Sources */,
 				6375FFE02C0B483A00EC1E36 /* APIService.swift in Sources */,
-				6375FFB62C0895B400EC1E36 /* MainModel.swift in Sources */,
+				6375FFB62C0895B400EC1E36 /* FlightModel.swift in Sources */,
 				6375FFB42C08959000EC1E36 /* MainViewModel.swift in Sources */,
 				6375FFF02C0B791900EC1E36 /* SearchDataSource.swift in Sources */,
 				6375FFFA2C0C746100EC1E36 /* SearchContainerView.swift in Sources */,
@@ -565,7 +562,6 @@
 				6375FFC62C08A19A00EC1E36 /* Assets.swift in Sources */,
 				6375FFC52C08A19A00EC1E36 /* Main.swift in Sources */,
 				6375FFD32C0A04A300EC1E36 /* AviaCoordinator.swift in Sources */,
-				6375FF972C088D0C00EC1E36 /* ViewController.swift in Sources */,
 				6375FFAF2C08922E00EC1E36 /* TabBarConfigurator.swift in Sources */,
 				6375FFEE2C0B78EB00EC1E36 /* SearchModel.swift in Sources */,
 				6375FFCC2C08BC2E00EC1E36 /* ConsertCell.swift in Sources */,

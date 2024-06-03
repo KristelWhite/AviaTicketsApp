@@ -29,7 +29,7 @@ class MainViewModel {
     let service = RequestManager()
     private var cancellables = Set<AnyCancellable>()
     //
-    private var flightSearchModel: MainModel?
+    private var flightSearchModel: FlightModel?
     var cityFrom: String? {
         return flightSearchModel?.cityFrom
     }
@@ -73,7 +73,7 @@ class MainViewModel {
     }
 //
     func updateSearch(cityFrom: String, cityTo: String) {
-        self.flightSearchModel = MainModel(cityFrom: cityFrom, cityTo: cityTo)
+        self.flightSearchModel = FlightModel(cityFrom: cityFrom, cityTo: cityTo)
     }
 //
 }

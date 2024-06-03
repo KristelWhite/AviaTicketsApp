@@ -76,13 +76,13 @@ private extension TabBarConfigurator {
             vc.viewModel = viewModel
             return vc
         case .profile:
-            return CommingSoonViewController()
+            return PlugViewController()
         case .hotels:
-            return CommingSoonViewController()
+            return PlugViewController()
         case .about:
-            return CommingSoonViewController()
+            return PlugViewController()
         case .subscriptions:
-            return CommingSoonViewController()
+            return PlugViewController()
         }
     }
 }

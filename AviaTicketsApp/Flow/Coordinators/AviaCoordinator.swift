@@ -60,20 +60,20 @@ class AviaCoordinator: Coordinator {
         vc.dismiss(animated: true)
     }
 
-        func showRouteSuggestionsController(with configureModel: MainModel) {
-            let vc = RouteSuggestionsViewController()
-            let viewModel = RouteSuggestionsViewModel(configureModel: configureModel)
-            viewModel.onEvent = { [weak self] event in
-                switch event {
-                case .showAllTickets:
-                    break
-                case .close:
-                    self?.navigationController.popViewController(animated: true)
-                }
+    func showRouteSuggestionsController(with configureModel: FlightModel) {
+        let vc = RouteSuggestionsViewController()
+        let viewModel = RouteSuggestionsViewModel(configureModel: configureModel)
+        viewModel.onEvent = { [weak self] event in
+            switch event {
+            case .showAllTickets:
+                break
+            case .close:
+                self?.navigationController.popViewController(animated: true)
             }
-            vc.viewModel = viewModel
-        navigationController.pushViewController(vc, animated: true)
         }
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
+    }
 
     func showPlug(){
         let vc = PlugViewController()

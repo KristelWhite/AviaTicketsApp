@@ -9,6 +9,12 @@ import UIKit
 
 class SearchContainerView: UIView {
 
+    enum Event {
+        case getCityTo(String)
+        case changeCityFrom(String)
+    }
+    var onEvent: ((Event) -> Void)?
+
     var cityFromTextField = UITextField()
     var cityToTextField = UITextField()
 
@@ -28,6 +34,7 @@ class SearchContainerView: UIView {
         layer.cornerRadius = 16
     }
     private func setup() {
+        cityToTextField.delegate = self
         cityFromTextField.delegate = self
         setupView()
         addSubviews()
@@ -115,15 +122,32 @@ class SearchContainerView: UIView {
 }
 
 extension SearchContainerView: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-            // Проверяем, содержит ли текстовое поле текст
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//            if let text = textField.text, !text.isEmpty {
+//                print("Текстовое поле заполнено: \(text)")
+//                onEvent?(.getCityTo(text))
+//            } else {
+//                print("Текстовое поле пустое или текст был удален")
+//            }
+//        }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == cityToTextField {
             if let text = textField.text, !text.isEmpty {
                 print("Текстовое поле заполнено: \(text)")
-                // Здесь может быть ваш код, который реагирует на окончание ввода, например:
-                // Отправка данных на сервер, обновление интерфейса и т.д.
+                onEvent?(.getCityTo(text))
+            } else {
+                print("Текстовое поле пустое или текст был удален")
+            }
+        } else if  textField == cityFromTextField {
+            if let text = textField.text, !text.isEmpty {
+                print("Текстовое поле заполнено: \(text)")
+                onEvent?(.changeCityFrom(text))
             } else {
                 print("Текстовое поле пустое или текст был удален")
             }
         }
+        textField.resignFirstResponder()
+           return true
+       }
 
 }

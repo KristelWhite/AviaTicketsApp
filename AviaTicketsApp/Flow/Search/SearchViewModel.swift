@@ -17,13 +17,14 @@ class SearchViewModel {
 
     enum Input {
         case loadData
-        case tapSelectedCity(String)
+        case selectedCity(String)
         case getCityFrom
         case tapOn(OptionsStackView.Options)
+        case changeCityFrom(String)
     }
 
     enum Event {
-        case enterCityTo(MainModel)
+        case enterCityTo(FlightModel)
         case openCommingSoon
     }
 
@@ -33,7 +34,11 @@ class SearchViewModel {
     let service = RequestManager()
     private var cancellables = Set<AnyCancellable>()
 
-    private var flightSearchModel: MainModel!
+    private var flightSearchModel: FlightModel! {
+        didSet{
+            print(flightSearchModel)
+        }
+    }
 
 
     init(cityFrom: String) {
@@ -44,7 +49,7 @@ class SearchViewModel {
         switch input {
         case .loadData:
             loadData()
-        case .tapSelectedCity(let cityTo):
+        case .selectedCity(let cityTo):
             update(cityTo: cityTo)
             onEvent?(.enterCityTo(flightSearchModel))
         case .getCityFrom:
@@ -60,6 +65,8 @@ class SearchViewModel {
             case .lastMinuteTickets:
                 onEvent?(.openCommingSoon)
             }
+        case .changeCityFrom(let city):
+            update(cityFrom: city)
         }
     }
 
@@ -75,14 +82,17 @@ class SearchViewModel {
     }
 
     func updateSearch(cityFrom: String?, cityTo: String?) {
-        self.flightSearchModel = MainModel(cityFrom: cityFrom, cityTo: cityTo)
+        self.flightSearchModel = FlightModel(cityFrom: cityFrom, cityTo: cityTo)
+        print("update ")
     }
 
     func update(cityFrom: String?) {
         self.flightSearchModel.cityFrom = cityFrom
+        print("update ")
     }
     func update(cityTo: String?) {
         self.flightSearchModel.cityTo = cityTo
+        print("update ")
     }
 
 

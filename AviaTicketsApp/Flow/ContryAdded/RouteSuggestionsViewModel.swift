@@ -11,6 +11,7 @@ import Combine
 class RouteSuggestionsViewModel {
     enum Output {
         case content([RouteProps])
+        case setWay(FlightModel)
 
     }
 
@@ -18,6 +19,7 @@ class RouteSuggestionsViewModel {
         case loadData
         case allTicketsButtonTapped
         case backButtonTapped
+        case setWay
     }
 
     enum Event {
@@ -31,14 +33,15 @@ class RouteSuggestionsViewModel {
     let service = RequestManager()
     private var cancellables = Set<AnyCancellable>()
 
-    private var flightSearchModel: MainModel!
+    private var flightSearchModel: FlightModel!
     
-    init(configureModel: MainModel) {
+    init(configureModel: FlightModel) {
         updateSearch(cityFrom: configureModel.cityFrom, cityTo: configureModel.cityTo)
+        print(flightSearchModel)
     }
 
     private func updateSearch(cityFrom: String?, cityTo: String?) {
-        self.flightSearchModel = MainModel(cityFrom: cityFrom, cityTo: cityTo)
+        self.flightSearchModel = FlightModel(cityFrom: cityFrom, cityTo: cityTo)
     }
 
     func handle(_ input: Input) {
@@ -49,6 +52,8 @@ class RouteSuggestionsViewModel {
             onEvent?(.showAllTickets)
         case .backButtonTapped:
             onEvent?(.close)
+        case .setWay:
+            onOutput?(.setWay(flightSearchModel))
         }
     }
 

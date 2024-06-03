@@ -40,7 +40,7 @@ class SearchViewController: UIViewController {
             switch event {
             case .selectCity(let city):
                 print("controller")
-                self?.viewModel?.handle(.tapSelectedCity(city))
+                self?.viewModel?.handle(.selectedCity(city))
             }
         }
         optionsStackView.onEvent = {[weak self] event in
@@ -50,6 +50,17 @@ class SearchViewController: UIViewController {
 
             }
         }
+
+        searchContainerView.onEvent = { [weak self] event in
+            switch event {
+            case .getCityTo(let city):
+                self?.viewModel?.handle(.selectedCity(city))
+            case .changeCityFrom(let city):
+                self?.viewModel?.handle(.changeCityFrom(city))
+            }
+
+        }
+
     }
 
     func setupUI() {

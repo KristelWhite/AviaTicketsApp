@@ -69,7 +69,7 @@ class AppCoordinator {
             vc.viewModel = viewModel
             return vc
         case .profile, .hotels , .about, .subscriptions:
-            return CommingSoonViewController()
+            return PlugViewController()
         }
     }
 }
