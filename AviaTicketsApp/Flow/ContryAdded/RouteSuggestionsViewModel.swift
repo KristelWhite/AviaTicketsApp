@@ -16,11 +16,13 @@ class RouteSuggestionsViewModel {
 
     enum Input {
         case loadData
-        case showAllTicketsButtonTapped
+        case allTicketsButtonTapped
+        case backButtonTapped
     }
 
     enum Event {
         case showAllTickets
+        case close
     }
 
     var onOutput: ((Output) -> Void)?
@@ -43,9 +45,10 @@ class RouteSuggestionsViewModel {
         switch input {
         case .loadData:
             loadData()
-        case .showAllTicketsButtonTapped:
-            print("vm")
+        case .allTicketsButtonTapped:
             onEvent?(.showAllTickets)
+        case .backButtonTapped:
+            onEvent?(.close)
         }
     }
 
@@ -60,7 +63,7 @@ class RouteSuggestionsViewModel {
                 }
             }, receiveValue: { [weak self] data in
                 self?.handleReceivedData(data: data)
-                print("Получены данные первого API: \(data)")
+                print("Получены данные второго API: \(data)")
             })
             .store(in: &cancellables)
     }
@@ -71,6 +74,4 @@ class RouteSuggestionsViewModel {
         }
         onOutput?(.content(content))
     }
-
-//
 }

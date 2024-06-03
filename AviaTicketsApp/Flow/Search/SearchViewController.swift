@@ -41,9 +41,14 @@ class SearchViewController: UIViewController {
             case .selectCity(let city):
                 print("controller")
                 self?.viewModel?.handle(.tapSelectedCity(city))
+            }
+        }
+        optionsStackView.onEvent = {[weak self] event in
+            switch event {
+            case .tapOn(let option):
+                self?.viewModel?.handle(.tapOn(option))
 
             }
-
         }
     }
 

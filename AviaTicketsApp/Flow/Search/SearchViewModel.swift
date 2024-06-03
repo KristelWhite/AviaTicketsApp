@@ -19,10 +19,12 @@ class SearchViewModel {
         case loadData
         case tapSelectedCity(String)
         case getCityFrom
+        case tapOn(OptionsStackView.Options)
     }
 
     enum Event {
         case enterCityTo(MainModel)
+        case openCommingSoon
     }
 
     var onOutput: ((Output) -> Void)?
@@ -43,11 +45,21 @@ class SearchViewModel {
         case .loadData:
             loadData()
         case .tapSelectedCity(let cityTo):
-            print("vm")
             update(cityTo: cityTo)
             onEvent?(.enterCityTo(flightSearchModel))
         case .getCityFrom:
             onOutput?(.setCityFrom(flightSearchModel.cityFrom ?? ""))
+        case .tapOn(let option):
+            switch option {
+            case .route:
+                onEvent?(.openCommingSoon)
+            case .anyDirection:
+                onEvent?(.openCommingSoon)
+            case .onWeekend:
+                onEvent?(.openCommingSoon)
+            case .lastMinuteTickets:
+                onEvent?(.openCommingSoon)
+            }
         }
     }
 

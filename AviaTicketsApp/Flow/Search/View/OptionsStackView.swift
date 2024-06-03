@@ -9,6 +9,11 @@ import UIKit
 
 class OptionsStackView: UIView {
 
+    enum Event {
+        case tapOn(Options)
+    }
+    var onEvent: ((Event) -> Void)?
+
     enum Options: CaseIterable {
         case route
         case anyDirection
@@ -152,5 +157,20 @@ class OptionsStackView: UIView {
         label.text = option.text
         imageView.image = option.image
         optionView.backgroundColor = option.color
+
+        addAction(on: stack, with: option)
+    }
+
+    private func addAction(on stack: UIStackView, with option: Options){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(optionTapped(_:)))
+        stack.addGestureRecognizer(tapGesture)
+        stack.tag = option.hashValue
+    }
+
+    @objc private func optionTapped(_ sender: UITapGestureRecognizer) {
+        guard let viewTag = sender.view?.tag,
+              let option = Options.allCases.first(where: { $0.hashValue == viewTag }) else { return }
+        print(option.text)
+        onEvent?(.tapOn(option))
     }
 }

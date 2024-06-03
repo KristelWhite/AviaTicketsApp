@@ -10,18 +10,15 @@ import UIKit
 class RouteSuggestionsViewController: UIViewController{
 
     var viewModel: RouteSuggestionsViewModel?
+    private lazy var optionsDataSource = OptionsDataSource(collectionView: optionCollectionView)
 
     private let searchContainerView = RouteSearchContainerView()
     private let tableContainerView = RouteTableContainerView()
-
-    private lazy var optionsDataSource = OptionsDataSource(collectionView: optionCollectionView)
     private let optionCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-//        layout.itemSize.height = 33
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
-//        collectionView.register(ConcertCell.self, forCellWithReuseIdentifier: ConcertCell.reuseIdentifier)
         return collectionView
     }()
 
@@ -38,10 +35,30 @@ class RouteSuggestionsViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureCollectionView()
-        showAllTicketsButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-        setupUI()
+        setupConstraints()
+        setup()
+    }
 
+
+    private func setup(){
+        configureCollectionView()
+        configurevViewModel()
+        addActions()
+        addEvents()
+        optionsDataSource.applyInitialSnapshot()
+
+    }
+
+    private func addEvents(){
+        searchContainerView.onEvent = { [weak self] event in
+            switch event {
+            case .backButton:
+                self?.viewModel?.handle(.backButtonTapped)
+            }
+        }
+    }
+
+    private func configurevViewModel() {
         viewModel?.onOutput = { [weak self] output in
             switch output {
             case .content(let flights):
@@ -50,23 +67,21 @@ class RouteSuggestionsViewController: UIViewController{
 
         }
         viewModel?.handle(.loadData)
-        optionsDataSource.applyInitialSnapshot()
     }
 
-    func configureCollectionView(){
+    private func addActions(){
+        showAllTicketsButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+    }
+
+    @objc func backButtonTapped() {
+        print("Button tapped!")
+    }
+
+    private func configureCollectionView(){
         optionCollectionView.delegate = self
     }
-    func createLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { (sectionIndex, environment) -> NSCollectionLayoutSection? in
-            var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-            config.headerMode = .none
-            config.footerMode = .none
-            return NSCollectionLayoutSection.list(using: config, layoutEnvironment: environment)
-        }
-        return layout
-    }
 
-    func setupUI() {
+    private func setupConstraints() {
         view.backgroundColor = Palette.black.color
 
         view.addSubview(searchContainerView)
@@ -97,11 +112,7 @@ class RouteSuggestionsViewController: UIViewController{
             make.height.equalTo(42)
         }
     }
-
-        @objc func backButtonTapped() {
-            print("Button tapped!")
-        }
-    }
+}
 
 extension RouteSuggestionsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
 

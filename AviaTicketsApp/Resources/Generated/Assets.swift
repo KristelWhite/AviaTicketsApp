@@ -52,6 +52,7 @@ public enum Asset {
   public static let dieAntwoord = ImageAsset(name: "dieAntwoord")
   public static let lampa = ImageAsset(name: "lampa")
   public static let socrat = ImageAsset(name: "socrat")
+  public static let commingsoon = ImageAsset(name: "commingsoon")
   public static let phuket = ImageAsset(name: "phuket")
   public static let sochi = ImageAsset(name: "sochi")
   public static let tyrky = ImageAsset(name: "tyrky")

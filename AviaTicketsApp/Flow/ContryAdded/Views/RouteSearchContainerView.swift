@@ -10,6 +10,12 @@ import SnapKit
 
 class RouteSearchContainerView: UIView {
 
+    enum Event {
+        case backButton
+    }
+
+    var onEvent: ((Event) -> Void)?
+
     private var cityFromTextField: UITextField = {
         let textField = UITextField()
         let placeholderText = "Куда - Турция"
@@ -156,8 +162,7 @@ class RouteSearchContainerView: UIView {
     }
 
     @objc func backButtonTapped() {
-        // Действие для кнопки назад
-//        navigationController?.popViewController(animated: true)
+        onEvent?(.backButton)
     }
 
     @objc func exchangeButtonTapped() {

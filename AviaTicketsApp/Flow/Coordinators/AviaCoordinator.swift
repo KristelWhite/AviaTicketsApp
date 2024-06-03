@@ -36,6 +36,9 @@ class AviaCoordinator: Coordinator {
             case .enterCityTo(let configureModel):
                 self?.dismissController(vc: vc)
                 self?.showRouteSuggestionsController(with: configureModel)
+            case .openCommingSoon:
+                self?.dismissController(vc: vc)
+                self?.showPlug()
             }
         }
         vc.viewModel = viewModel
@@ -60,14 +63,32 @@ class AviaCoordinator: Coordinator {
         func showRouteSuggestionsController(with configureModel: MainModel) {
             let vc = RouteSuggestionsViewController()
             let viewModel = RouteSuggestionsViewModel(configureModel: configureModel)
-//            viewModel.onEvent = { [weak self] event in
-//                switch event {
-//                case .enterCityTo(let city):
-//                    <#code#>
-//                }
+            viewModel.onEvent = { [weak self] event in
+                switch event {
+                case .showAllTickets:
+                    break
+                case .close:
+                    self?.navigationController.popViewController(animated: true)
+                }
+            }
             vc.viewModel = viewModel
-        navigationController.pushViewController(vc, animated: false)
+        navigationController.pushViewController(vc, animated: true)
         }
+
+    func showPlug(){
+        let vc = PlugViewController()
+        if #available(iOS 15.0, *) {
+            vc.modalPresentationStyle = .pageSheet
+            if let sheet = vc.sheetPresentationController {
+                sheet.detents = [.large()]
+                sheet.prefersGrabberVisible = true
+                sheet.preferredCornerRadius = 16
+            }
+        } else {
+            vc.modalPresentationStyle = .automatic
+        }
+        navigationController.present(vc, animated: true)
+    }
 
 }
 class CommingSoonCoordinator: Coordinator {
@@ -78,6 +99,6 @@ class CommingSoonCoordinator: Coordinator {
     }
 
     func start() {
-        navigationController.pushViewController(CommingSoonViewController(), animated: false)
+        navigationController.pushViewController(PlugViewController(), animated: false)
     }
 }
