@@ -152,6 +152,12 @@ class MainViewController: UIViewController {
         clearButton.addTarget(self, action: #selector(clearTextField), for: .touchUpInside)
         cityFromTextField.rightView = clearButton
         cityFromTextField.rightViewMode = .whileEditing
+
+        cityFromTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        textField.text = textField.text?.filter { "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя- ".contains($0) }
     }
 
     @objc func clearTextField() {

@@ -18,7 +18,14 @@ class SearchContainerView: UIView {
     var cityFromTextField = UITextField()
     var cityToTextField = UITextField()
 
-    private let clearButton: UIButton = {
+    private let clearCityToButton: UIButton = {
+        let clearButton = UIButton(type: .custom)
+        clearButton.setTitleColor(Palette.grey6.color, for: .normal)
+        clearButton.setImage(Asset.cansel.image, for: .normal)
+        return clearButton
+    }()
+
+    private let clearCityFromButton: UIButton = {
         let clearButton = UIButton(type: .custom)
         clearButton.setTitleColor(Palette.grey6.color, for: .normal)
         clearButton.setImage(Asset.cansel.image, for: .normal)
@@ -45,19 +52,33 @@ class SearchContainerView: UIView {
         cityFromTextField.delegate = self
         setupView()
         addSubviews()
-        addClearAction()
+        addActions()
     }
 
-    private func addClearAction(){
-        clearButton.addTarget(self, action: #selector(clearTextField), for: .touchUpInside)
-        cityToTextField.rightView = clearButton
+    private func addActions(){
+        clearCityToButton.addTarget(self, action: #selector(clearCityToTextField), for: .touchUpInside)
+        cityToTextField.rightView = clearCityToButton
         cityToTextField.rightViewMode = .always
+
+        clearCityFromButton.addTarget(self, action: #selector(clearCityFromTextField), for: .touchUpInside)
+        cityFromTextField.rightView = clearCityFromButton
+        cityFromTextField.rightViewMode = .whileEditing
+
+        cityFromTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        cityToTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
 
-    @objc func clearTextField() {
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        textField.text = textField.text?.filter { "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя- ".contains($0) }
+    }
+
+    @objc func clearCityToTextField() {
         cityToTextField.text = ""
     }
 
+    @objc func clearCityFromTextField() {
+        cityFromTextField.text = ""
+    }
 
     func setCityFrom(text: String) {
         self.cityFromTextField.text = text
